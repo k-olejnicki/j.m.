@@ -34,14 +34,20 @@ body {
 .jumbotron h1 {
   font-family: "Terminator Real NFI";
   text-shadow: 0 -2px 0 rgba(0, 0, 0, 0.25);
-  color: #696b7c;
+  color: #57597c;
   font-size: 68px;
   font-weight: bold;
+}
+.jumbotron h2 {
+  font-family: "Shadows Into Light Two";
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+
+  font-size: 32px;
 }
 .container h1 {
   text-align: center;
   font-family: "Shadows Into Light Two" !important;
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  text-shadow: 0 -1px 0 rgba(105, 107, 124, 3.9);
   padding-top: 40px;
   padding-bottom: 10px;
 }
