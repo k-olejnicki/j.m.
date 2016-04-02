@@ -11,6 +11,119 @@ $navbar-default-brand-color: #77003c;
 $navbar-default-brand-color: #b7a5bf;
 $component-active-color: #ffffff;
 
+$color-header: rgb(105, 107, 124);
+$color-feature: #ed2329;
+$shadow-big: 5px 5px 15px rgba(0, 0, 0, 0.2);
+$shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+
+@mixin linearGradient($top, $bottom) {
+  background: $top; /* Old browsers */
+  background: -moz-linear-gradient(top, $top 0%, $bottom 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, $top), color-stop(100%, $bottom)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, $top 0%, $bottom 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, $top 0%, $bottom 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, $top 0%, $bottom 100%); /* IE10+ */
+  background: linear-gradient(to bottom, $top 0%, $bottom 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#000000', GradientType=0); /* IE6-9 */
+}
+
+.navbar-inverse {
+  text-align: center;
+  background: $color-header;
+  box-shadow: $shadow-big;
+  color: #920056;
+  font-size: 1.1em;
+  letter-spacing: 1px;
+  z-index: 2;
+  height: 50px;
+  @include linearGradient($color-header, lighten($color-header, 10%));
+}
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
+.image {
+  height: 100vh;
+  background: url('/uploads/system/logo.nolight.jpg') no-repeat center center;
+  background-size: cover;
+  background-attachment:fixed;
+  position: relative;
+}
+
+.image:after,
+.image:before {
+  content: " ";
+  position: absolute;
+  bottom: 0;
+  width: 0;
+  height: 0;
+}
+
+.image:before {
+  left: 0;
+  border-left: 30vw solid #FFF;
+  border-right: 30vw solid transparent;
+  border-top: 50px solid transparent;
+  border-bottom: 50px solid #FFF;
+}
+
+.image:after {
+  right: 0;
+  border-left: 20vw solid transparent;
+  border-right: 20vw solid #FFF;
+  border-top: 30px solid transparent;
+  border-bottom: 30px solid #FFF;
+}
+
+.content {
+  background-color: #fff;
+  padding: 20px;
+  min-height: 300px;
+  background-image: url(/uploads/system/logo.light.jpg);
+  background-attachment:fixed;
+}
+.section1 {
+  margin-top: 10%;
+  margin-bottom: 10%;
+}
+.section2 {
+  margin-top: 10%;
+  margin-bottom: 10%;
+}
+.section3 {
+  margin-top: 10%;
+  margin-bottom: 10%;
+}
+.section4 {
+  margin-top: 10%;
+  margin-bottom: 10%;
+}
+.section5 {
+  margin-top: 10%;
+  margin-bottom: 10%;
+}
+.section6 {
+  margin-top: 10%;
+  margin-bottom: 10%;
+}
+.section7 {
+  margin-top: 10%;
+  margin-bottom: 10%;
+}
+.section1 .col-md-4 {
+  -webkit-clip-path: polygon(25% 0, 100% 0, 100% 75%, 75% 100%, 0 100%, 0% 25%);
+  clip-path: polygon(25% 0, 100% 0, 100% 75%, 75% 100%, 0 100%, 0% 25%);
+}
+.section2 .container {
+  -webkit-clip-path: polygon(40% 0, 100% 0, 100% 100%, 0 100%, 0% 38%);
+  clip-path: polygon(40% 0, 100% 0, 100% 100%, 0 100%, 0% 38%);
+}
+.content h1 {
+  text-align: center;
+}
+
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
@@ -22,11 +135,15 @@ $component-active-color: #ffffff;
 }
 body {
   margin-top: 80px;
+  background-image: url(/uploads/system/background.jpg);
+  background-attachment:fixed;
+  background-size: cover;
 }
 .jumbotron {
   margin-bottom: 10px;
   background-image: url(/uploads/system/jumbotron.jpeg);
   background-size: cover;
+  background-attachment:fixed;
   background-position: 0% 7%;
   font-family: "Shadows Into Light Two";
   text-align: center;
