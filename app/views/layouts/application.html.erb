@@ -8,8 +8,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum sacle=1">
 </head>
 <body data-spy="scroll" data-target="#navtainer" data-offset="60">
-<body>
 
+
+    <p><% if flash[:notice] %>
+        <div class="alert alert-success">
+          <%= flash[:notice] %>
+        </div>
+    <% end %>
+    </p>
 <%= yield %>
 
 </body>
