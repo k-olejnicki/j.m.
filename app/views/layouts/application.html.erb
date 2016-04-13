@@ -10,13 +10,12 @@
 <body data-spy="scroll" data-target="#navtainer" data-offset="60">
 
 
-    <p><% if flash[:notice] %>
-        <div class="alert alert-success">
-          <%= flash[:notice] %>
-        </div>
-    <% end %>
-    </p>
-<%= yield %>
+<div class="container">
+  <% flash.each do |name, msg| %>
+      <%= content_tag(:div, msg, class: "alert alert-info") %>
+  <% end %>
+  <%= yield %>
+</div>
 
 </body>
 

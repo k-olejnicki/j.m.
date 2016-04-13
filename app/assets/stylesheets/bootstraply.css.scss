@@ -27,56 +27,21 @@ $shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#000000', GradientType=0); /* IE6-9 */
 }
 
-.navbar-inverse {
+.navbar-collapse {
   text-align: center;
-  background: $color-header;
-  box-shadow: $shadow-big;
+  font-family: "Shadows Into Light Two";
+  border-color: #787b8c;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
   color: #920056;
   font-size: 1.1em;
   letter-spacing: 1px;
   z-index: 2;
-  height: 50px;
-  @include linearGradient($color-header, lighten($color-header, 10%));
 }
 
 body {
   padding: 0;
   margin: 0;
 }
-
-.image {
-  height: 100vh;
-  background: url('/uploads/system/logo.nolight.jpg') no-repeat center center;
-  background-size: cover;
-  background-attachment:fixed;
-  position: relative;
-}
-
-.image:after,
-.image:before {
-  content: " ";
-  position: absolute;
-  bottom: 0;
-  width: 0;
-  height: 0;
-}
-
-.image:before {
-  left: 0;
-  border-left: 30vw solid #FFF;
-  border-right: 30vw solid transparent;
-  border-top: 50px solid transparent;
-  border-bottom: 50px solid #FFF;
-}
-
-.image:after {
-  right: 0;
-  border-left: 20vw solid transparent;
-  border-right: 20vw solid #FFF;
-  border-top: 30px solid transparent;
-  border-bottom: 30px solid #FFF;
-}
-
 .content {
   background-color: #fff;
   padding: 20px;
@@ -178,17 +143,10 @@ body {
 .center {
   text-align: center;
 }
-.navbar-inverse {
-  font-family: "Shadows Into Light Two";
-  text-align: center;
-  background-color: #2e2e2e;
-  border-color: #787b8c;
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-}
 .nav {
   text-align: right;
 }
 .navbar-brand {
-  color: #34b093 !important;
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  color: #920056 !important;
+  text-shadow: 0 -1px 0 rgba(120, 123, 140, 0.25);
 }

@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :images
   devise_for :admins
-
+    get '/admin' => 'images#index'
   devise_scope :admin do
     get '/new' => 'devise/registrations#new'
     get '/login' => 'devise/sessions#new'
