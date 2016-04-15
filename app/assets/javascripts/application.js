@@ -18,3 +18,4 @@
 //= require bootstrap
 //= require masonry/jquery.masonry
 //= require_tree .
+//= require home
