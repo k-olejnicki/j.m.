@@ -1,0 +1,14 @@
+<% @comments.each do |c| %>
+   <div class="box">
+     <div class="panel panel-default">
+       <%= c.gender %><br/>
+       <div class="panel-body">
+          <%= c.author %><br/>
+       </div>
+       <div class="panel-footer">
+         <%= link_to 'Edytuj', edit_comment_path(comment) %><br/>
+         <%= link_to 'Usuń', comment, method: :delete, data: { confirm: 'Jesteś pewien?' } %><br/>
+       </div>
+     </div>
+   </div>
+  <% end %>

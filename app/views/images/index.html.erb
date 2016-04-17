@@ -20,11 +20,14 @@
           <%= i.label :img, "Obraz" %>
           <%= i.file_field :img, class: "form-control" %>
         </div>
+      <div class="panel-footer">
           <div class="actions">
             <%= i.submit "Dodaj zdjęcie" %>
           </div>
       <% end %>
     </div>
+</div>
+
 <%= form_for @comment do |c| %>
     <div class="panel-heading"><center><h1>Dodawanie Komentarzy</h1></center></div>
         <div class="field">
@@ -42,28 +45,66 @@
               <%= c.label :body, "Treść komentarza" %>
               <%= c.text_field :body, class: "form-control" %>
             </div>
+    <div class="panel-footer">
               <div class="actions">
                 <%= c.submit "Dodaj kommentarz" %>
               </div>
             <% end %>
+    </div>
 </div>
-<div class="panel-footer"></div>
-<table>
-  <thead>
-      <center><th>Zdjęcia</th></center>
-      <th colspan="3"></th>
-  </thead>
 
+<table>
   <tbody>
+  <div class="panel panel-default">
+  <div class="panel-heading"><center><h1>Zdjęcia</h1></center></div>
+  <div class="panel-body">
     <% @images.each do |image| %>
-      <tr>
-        <td><%= image.admin_id %></td>
-        <td><%= link_to image_tag(image.img.url(:thumb)), @image.img.url %></td>
-        <td><%= link_to 'Show', image %></td>
-        <td><%= link_to 'Edit', edit_image_path(image) %></td>
-        <td><%= link_to 'Destroy', image, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+      <div id="images" class="transitions-enabled">
+        <div class="box">
+          <div class="panel panel-default">
+        <%= link_to image_tag(image.img.url(:original)), image.img.url %>
+            <div class="panel-body">
+              <%= image.admin_id %>
+            </div>
+              <div class="panel-footer">
+                <%= button_to 'Show', image %><br/>
+                <%= button_to 'Edit', edit_image_path(image) %><br/>
+                <%= button_to 'Destroy', image, method: :delete, data: { confirm: 'Are you sure?' } %><br/>
+              </div>
+          </div>
+        </div>
     <% end %>
+    </div>
+  </div>
+  </div>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+  <div class="panel panel-default">
+    <div class="panel-heading"><center><h1>Komentarze</h1></center></div>
+    <div class="panel-body">
+      <% @comments.each do |comment| %>
+          <div id="images" class="transitions-enabled">
+            <div class="box">
+              <div class="panel panel-default">
+                <%= comment.gender %>
+                <%= comment.author %>
+                <div class="panel-body">
+                  <%= comment.body %>
+                </div>
+                <div class="panel-footer">
+                  <%= button_to 'Show', comment %><br/>
+                  <%= button_to 'Edit', edit_comment_path(comment) %><br/>
+                  <%= button_to 'Destroy', comment, method: :delete, data: { confirm: 'Are you sure?' } %><br/>
+                </div>
+              </div>
+            </div>
+      <% end %>
+      </div>
+    </div>
+  </div>
   </tbody>
 </table>
 

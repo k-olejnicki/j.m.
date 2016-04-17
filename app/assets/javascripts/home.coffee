@@ -9,9 +9,3 @@ $(window).scroll ->
 $('.scrollToTop').click ->
   $('html, body').animate { scrollTop: 0 }, 500
   false
-
-  $('#images').masonry isAnimated: !Modernizr.csstransitions
-
-$('.grid').masonry
-  itemSelector: '.grid-item'
-  columnWidth: 200

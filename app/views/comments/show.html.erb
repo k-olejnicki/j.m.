@@ -1,0 +1,13 @@
+<div class="row">
+  <div class="col-md-offset-2 col-md-8">
+    <div class="panel panel-default">
+      <div class="panel-heading center"><%= @comment.author %></div>
+      <div class="panel-body">
+        <%= @comment.gender %><br/>
+        <br/><%= @comment.body %><br/>
+          <%= link_to 'Edycja', edit_comment_path(@comment) %> |
+        <%= link_to 'Wstecz', comment_path %>
+      </div>
+    </div>
+  </div>
+</div>

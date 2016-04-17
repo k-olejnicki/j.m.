@@ -16,17 +16,6 @@ $color-feature: #ed2329;
 $shadow-big: 5px 5px 15px rgba(0, 0, 0, 0.2);
 $shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
 
-@mixin linearGradient($top, $bottom) {
-  background: $top; /* Old browsers */
-  background: -moz-linear-gradient(top, $top 0%, $bottom 100%); /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, $top), color-stop(100%, $bottom)); /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(top, $top 0%, $bottom 100%); /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(top, $top 0%, $bottom 100%); /* Opera 11.10+ */
-  background: -ms-linear-gradient(top, $top 0%, $bottom 100%); /* IE10+ */
-  background: linear-gradient(to bottom, $top 0%, $bottom 100%); /* W3C */
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#000000', GradientType=0); /* IE6-9 */
-}
-
 .navbar-collapse {
   text-align: center;
   font-family: "Shadows Into Light Two";
@@ -42,15 +31,15 @@ body
   margin: 0;
   position: fixed;
   bottom: 8.5%;
-  right: 0;
+  right: 10px;
   z-index: 100;
   display: none;
   text-decoration: none;
   color: #ffffff;
   background-color: rgba(85, 90, 108, 0.7);
-  padding: 10px 20px 10px 10px;
+  padding: 10px 10px 10px 10px;
   font-size: 12px;
-  width: 5%;
+  width: 45px;
 }
 .scrollToTop:hover {
   background-color: rgb(146, 0, 86);
@@ -72,7 +61,6 @@ body
   opacity: 0;
   filter: alpha(opacity=0);
 }
-.comments-container{width:600px;height:600px;overflow:auto;}
 .fa-chevron-up {
   color: white;
 }
@@ -169,8 +157,6 @@ body {
   text-align: center;
   font-family: "Shadows Into Light Two" !important;
   text-shadow: 0 -1px 0 rgba(105, 107, 124, 3.9);
-  padding-top: 40px;
-  padding-bottom: 10px;
 }
 .h1 {
   color: black !important;
@@ -178,9 +164,6 @@ body {
 }
 .span {
   color: black !important;
-}
-.center {
-  text-align: center;
 }
 .nav {
   text-align: right;

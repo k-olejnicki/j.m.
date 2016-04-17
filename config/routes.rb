@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  resources :comments
   resources :images
+  resources :comments
   devise_for :admins
     get '/admin' => 'images#index'
   devise_scope :admin do
