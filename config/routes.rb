@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   devise_scope :admin do
     get '/new' => 'devise/registrations#new'
     get '/login' => 'devise/sessions#new'
+    get '/logout' => 'devise/sessions#destroy'
   end
   post '/' => 'home#index'
   root 'home#index'
