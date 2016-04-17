@@ -121,19 +121,19 @@ body
 
 @font-face {
   font-family: "Shadows Into Light Two";
-  src: asset-url("/fonts/shadowsintolighttwo-regular-webfont.eot") format('embedded-opentype'),
-  asset-url("/fonts/shadowsintolighttwo-regular-webfont.svg") format('svg'),
-  asset-url("/fonts/shadowsintolighttwo-regular-webfont.woff") format('woff'),
-  asset-url("/fonts/shadowsintolighttwo-regular-webfont.woff2") format('woff2'),
-  asset-url("/fonts/shadowsintolighttwo-regular-webfont.ttf") format('truetype');
+  src: font-url( asset-path("shadowsintolighttwo-regular-webfont.eot") ) format('embedded-opentype'),
+  font-url( asset-path("shadowsintolighttwo-regular-webfont.svg") ) format('svg'),
+  font-url( asset-path("shadowsintolighttwo-regular-webfont.woff") ) format('woff'),
+  font-url( asset-path("shadowsintolighttwo-regular-webfont.woff2") ) format('woff2'),
+  font-url( asset-path("shadowsintolighttwo-regular-webfont.ttf") ) format('truetype');
   font-weight: normal;
   font-style: normal;
   font-family: "Terminator Real NFI";
-  src: asset-url("/fonts/Terminator-Real-NFI-V2-V1.eot") format('embedded-opentype'),
-  asset-url("/fonts/Terminator-Real-NFI-V2-V1.svg") format('svg'),
-  asset-url("/fonts/Terminator-Real-NFI-V2-V1.woff") format('woff'),
-  asset-url("/fonts/Terminator-Real-NFI-V2-V1.woff2") format('woff2'),
-  asset-url("/fonts/Terminator-Real-NFI-V2-V1.ttf") format('truetype');
+  src: font-url( asset-path("Terminator-Real-NFI-V2-V1.eot") ) format('embedded-opentype'),
+  font-url( asset-path("Terminator-Real-NFI-V2-V1.svg") ) format('svg'),
+  font-url( asset-path("Terminator-Real-NFI-V2-V1.woff") ) format('woff'),
+  font-url( asset-path("Terminator-Real-NFI-V2-V1.woff2") ) format('woff2'),
+  font-url( asset-path("Terminator-Real-NFI-V2-V1.ttf") ) format('truetype');
   font-weight: normal;
   font-style: normal;
 }
