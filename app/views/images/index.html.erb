@@ -1,19 +1,64 @@
-<p id="notice"><%= notice %></p>
+<%= form_for @image,html: {multipart: true} do |i| %>
+    <% if @image.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@image.errors.count, "error") %> prohibited this image from being saved:</h2>
 
-<h1>Listing Images</h1>
-
+          <ul>
+            <% @image.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+<div class="panel panel-default">
+  <div class="panel-heading"><h1>Administracja Stroną</h1></div>
+    <div class="panel-body">
+      <div class="field">
+        <%= i.hidden_field :admin_id %>
+      </div>
+        <div class="form-group">
+          <%= i.label :img, "Obraz" %>
+          <%= i.file_field :img, class: "form-control" %>
+        </div>
+          <div class="actions">
+            <%= i.submit "Dodaj zdjęcie" %>
+          </div>
+      <% end %>
+    </div>
+<%= form_for @comment do |c| %>
+    <div class="panel-heading"><center><h1>Dodawanie Komentarzy</h1></center></div>
+        <div class="field">
+          <%= c.label :gender,"Płeć" %><br />
+          <%= c.label :gender, "Mężczyzna", :value => "M"  %>
+          <%= c.radio_button :gender, true %>
+          <%= c.label :gender, "Kobieta", :value => "K" %>
+          <%= c.radio_button :gender, false, :checked => true %>
+        </div>
+          <div class="form-group">
+            <%= c.label :author, "Imię i Nazwisko autora komentarza" %>
+            <%= c.text_field :author, class: "form-control" %>
+          </div>
+            <div class="form-group">
+              <%= c.label :body, "Treść komentarza" %>
+              <%= c.text_field :body, class: "form-control" %>
+            </div>
+              <div class="actions">
+                <%= c.submit "Dodaj kommentarz" %>
+              </div>
+            <% end %>
+</div>
+<div class="panel-footer"></div>
 <table>
   <thead>
-    <tr>
-      <th>Admin</th>
+      <center><th>Zdjęcia</th></center>
       <th colspan="3"></th>
-    </tr>
   </thead>
 
   <tbody>
     <% @images.each do |image| %>
       <tr>
         <td><%= image.admin_id %></td>
+        <td><%= link_to image_tag(image.img.url(:thumb)), @image.img.url %></td>
         <td><%= link_to 'Show', image %></td>
         <td><%= link_to 'Edit', edit_image_path(image) %></td>
         <td><%= link_to 'Destroy', image, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -23,5 +68,6 @@
 </table>
 
 <br>
-
-<%= link_to 'New Image', new_image_path %>
+<div class="actions">
+<%= button_to 'Powrót do Strony Głównej', root_path %>
+</div>

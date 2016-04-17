@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :comments
   resources :images
   devise_for :admins
     get '/admin' => 'images#index'
@@ -6,7 +7,7 @@ Rails.application.routes.draw do
     get '/new' => 'devise/registrations#new'
     get '/login' => 'devise/sessions#new'
   end
-
+  post '/' => 'home#index'
   root 'home#index'
 
 

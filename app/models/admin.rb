@@ -7,4 +7,5 @@ class Admin < ActiveRecord::Base
     devise :database_authenticatable, :recoverable, :rememberable, :trackable, :validatable, :registerable
   end
   has_many :images
+  has_many :comments
 end

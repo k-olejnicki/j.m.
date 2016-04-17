@@ -3,6 +3,7 @@
 <p>
   <strong>Admin:</strong>
   <%= @image.admin_id %>
+  <%= link_to image_tag(@image.img.url(:original)), @image.img.url %>
 </p>
 
 <%= link_to 'Edit', edit_image_path(@image) %> |

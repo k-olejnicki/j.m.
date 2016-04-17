@@ -57,19 +57,36 @@ body
   color: #ffffff;
   text-decoration: none;
 }
-.content {
-  background-color: #fff;
-  padding: 20px;
-  min-height: 300px;
-  background-image: url(/uploads/system/logo.light.jpg);
-  background-attachment:fixed;
+.circular {
+  width: 150px;
+  height: 150px;
+  border-radius: 150px;
+  -webkit-border-radius: 150px;
+  -moz-border-radius: 150px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+  -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+  -moz-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
 }
+
+.circular img {
+  opacity: 0;
+  filter: alpha(opacity=0);
+}
+.comments-container{width:600px;height:600px;overflow:auto;}
 .fa-chevron-up {
   color: white;
 }
 .section1 {
   margin-top: 10%;
   margin-bottom: 10%;
+  #left {
+    margin-left: 8%;
+    float: left;
+  }
+  #right {
+    margin-right: 8%;
+    float:right;
+  }
 }
 .section2 {
   margin-top: 10%;
@@ -95,14 +112,6 @@ body
   margin-top: 10%;
   margin-bottom: 10%;
 }
-.section1 .col-md-4 {
-  -webkit-clip-path: polygon(25% 0, 100% 0, 100% 75%, 75% 100%, 0 100%, 0% 25%);
-  clip-path: polygon(25% 0, 100% 0, 100% 75%, 75% 100%, 0 100%, 0% 25%);
-}
-.section2 .container {
-  -webkit-clip-path: polygon(40% 0, 100% 0, 100% 100%, 0 100%, 0% 38%);
-  clip-path: polygon(40% 0, 100% 0, 100% 100%, 0 100%, 0% 38%);
-}
 .content h1 {
   text-align: center;
 }
@@ -112,9 +121,21 @@ body
 
 @font-face {
   font-family: "Shadows Into Light Two";
-  src: url('/assets/fonts/ShadowsIntoLightTwo-Regular.ttf');
+  src: font-url('/assets/fonts/shadowsintolighttwo-regular-webfont.eot') format('embedded-opentype'),
+  font-url('/assets/fonts/shadowsintolighttwo-regular-webfont.svg') format('svg'),
+  font-url('/assets/fonts/shadowsintolighttwo-regular-webfont.woff') format('woff'),
+  font-url('/assets/fonts/shadowsintolighttwo-regular-webfont.woff2') format('woff2'),
+  font-url('//assets/fonts/ShadowsIntoLightTwo-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
   font-family: "Terminator Real NFI";
-  src: url('/assets/fonts/terminator_real_nfi.woff');
+  src: font-url('/assets/fonts/Terminator-Real-NFI-V2-V1.eot') format('embedded-opentype'),
+  font-url('/assets/fonts/Terminator-Real-NFI-V2-V1.svg') format('svg'),
+  font-url('/assets/fonts/Terminator-Real-NFI-V2-V1.woff') format('woff'),
+  font-url('/assets/fonts/Terminator-Real-NFI-V2-V1.woff2') format('woff2'),
+  font-url('/assets/fonts/Terminator-Real-NFI-V2-V1.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
 }
 body {
   margin-top: 80px;
