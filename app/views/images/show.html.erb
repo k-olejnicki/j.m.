@@ -2,9 +2,10 @@
 
 <p>
   <strong>Admin:</strong>
-  <%= @image.admin_id %>
-  <%= link_to image_tag(@image.img.url(:original)), @image.img.url %>
+  <% @images.each do |image| %>
+  <%= image.admin_id %>
+  <%= link_to image_tag(image.img.url(:original)), image.img.url %>
+  <% end %>
 </p>
 
-<%= link_to 'Edit', edit_image_path(@image) %> |
 <%= link_to 'Back', images_path %>

@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     get '/new' => 'devise/registrations#new'
     get '/login' => 'devise/sessions#new'
     get '/logout' => 'devise/sessions#destroy'
+    get '/show' => 'images#show'
   end
   post '/' => 'home#index'
   root 'home#index'

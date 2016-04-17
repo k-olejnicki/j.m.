@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-
+  before_action :authenticate_admin!
     # GET /comments
     # GET /comments.json
     def index
