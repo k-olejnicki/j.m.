@@ -1,139 +1,169 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+
+
+
+
+ */
+/**** Transitions ****/
+
+
+.transitions-enabled.masonry,
+.transitions-enabled.masonry .masonry-brick {
+  -webkit-transition-duration: 0.7s;
+     -moz-transition-duration: 0.7s;
+      -ms-transition-duration: 0.7s;
+       -o-transition-duration: 0.7s;
+          transition-duration: 0.7s;
+}
+
+.transitions-enabled.masonry {
+  -webkit-transition-property: height, width;
+     -moz-transition-property: height, width;
+      -ms-transition-property: height, width;
+       -o-transition-property: height, width;
+          transition-property: height, width;
+}
+
+.transitions-enabled.masonry  .masonry-brick {
+  -webkit-transition-property: left, right, top;
+     -moz-transition-property: left, right, top;
+      -ms-transition-property: left, right, top;
+       -o-transition-property: left, right, top;
+          transition-property: left, right, top;
+}
+
+
+/* disable transitions on container */
+.transitions-enabled.infinite-scroll.masonry {
+  -webkit-transition-property: none;
+     -moz-transition-property: none;
+      -ms-transition-property: none;
+       -o-transition-property: none;
+          transition-property: none;
+}
 @charset "UTF-8";
-/* line 30, /home/kamil/RubymineProjects/justyna/app/assets/stylesheets/bootstraply.css.scss */
-.navbar-inverse {
+/* line 19, /home/kamil/RubymineProjects/justyna/app/assets/stylesheets/bootstraply.css.scss */
+.navbar-collapse {
   text-align: center;
-  background: #696b7c;
-  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
-  color: #920056;
+  font-family: "Shadows Into Light Two";
+  border-color: #787b8c;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  color: #920056 !important;
   font-size: 1.1em;
   letter-spacing: 1px;
   z-index: 2;
-  height: 50px;
-  background: #696b7c;
-  /* Old browsers */
-  background: -moz-linear-gradient(top, #696b7c 0%, #828496 100%);
-  /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #696b7c), color-stop(100%, #828496));
-  /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(top, #696b7c 0%, #828496 100%);
-  /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(top, #696b7c 0%, #828496 100%);
-  /* Opera 11.10+ */
-  background: -ms-linear-gradient(top, #696b7c 0%, #828496 100%);
-  /* IE10+ */
-  background: linear-gradient(to bottom, #696b7c 0%, #828496 100%);
-  /* W3C */
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#000000', GradientType=0);
-  /* IE6-9 */
 }
 
-/* line 42, /home/kamil/RubymineProjects/justyna/app/assets/stylesheets/bootstraply.css.scss */
-body {
-  padding: 0;
+/* line 29, /home/kamil/RubymineProjects/justyna/app/assets/stylesheets/bootstraply.css.scss */
+body
+.scrollToTop {
   margin: 0;
+  position: fixed;
+  bottom: 8.5%;
+  right: 10px;
+  z-index: 100;
+  display: none;
+  text-decoration: none;
+  color: #ffffff;
+  background-color: rgba(85, 90, 108, 0.7);
+  padding: 10px 10px 10px 10px;
+  font-size: 12px;
+  width: 45px;
 }
 
-/* line 47, /home/kamil/RubymineProjects/justyna/app/assets/stylesheets/bootstraply.css.scss */
-.image {
-  height: 100vh;
-  background: url("/uploads/system/logo.nolight.jpg") no-repeat center center;
-  background-size: cover;
-  background-attachment: fixed;
-  position: relative;
+/* line 44, /home/kamil/RubymineProjects/justyna/app/assets/stylesheets/bootstraply.css.scss */
+.scrollToTop:hover {
+  background-color: #920056;
+  color: #ffffff;
+  text-decoration: none;
 }
 
-/* line 55, /home/kamil/RubymineProjects/justyna/app/assets/stylesheets/bootstraply.css.scss */
-.image:after,
-.image:before {
-  content: " ";
-  position: absolute;
-  bottom: 0;
-  width: 0;
-  height: 0;
+/* line 49, /home/kamil/RubymineProjects/justyna/app/assets/stylesheets/bootstraply.css.scss */
+.circular {
+  width: 150px;
+  height: 150px;
+  border-radius: 150px;
+  -webkit-border-radius: 150px;
+  -moz-border-radius: 150px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.8);
+  -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, 0.8);
+  -moz-box-shadow: 0 0 8px rgba(0, 0, 0, 0.8);
+}
+
+/* line 60, /home/kamil/RubymineProjects/justyna/app/assets/stylesheets/bootstraply.css.scss */
+.circular img {
+  opacity: 0;
+  filter: alpha(opacity=0);
 }
 
 /* line 64, /home/kamil/RubymineProjects/justyna/app/assets/stylesheets/bootstraply.css.scss */
-.image:before {
-  left: 0;
-  border-left: 30vw solid #FFF;
-  border-right: 30vw solid transparent;
-  border-top: 50px solid transparent;
-  border-bottom: 50px solid #FFF;
+.fa-chevron-up {
+  color: white;
 }
 
-/* line 72, /home/kamil/RubymineProjects/justyna/app/assets/stylesheets/bootstraply.css.scss */
-.image:after {
-  right: 0;
-  border-left: 20vw solid transparent;
-  border-right: 20vw solid #FFF;
-  border-top: 30px solid transparent;
-  border-bottom: 30px solid #FFF;
-}
-
-/* line 80, /home/kamil/RubymineProjects/justyna/app/assets/stylesheets/bootstraply.css.scss */
-.content {
-  background-color: #fff;
-  padding: 20px;
-  min-height: 300px;
-  background-image: url(/uploads/system/logo.light.jpg);
-  background-attachment: fixed;
-}
-
-/* line 87, /home/kamil/RubymineProjects/justyna/app/assets/stylesheets/bootstraply.css.scss */
+/* line 67, /home/kamil/RubymineProjects/justyna/app/assets/stylesheets/bootstraply.css.scss */
 .section1 {
   margin-top: 10%;
   margin-bottom: 10%;
 }
+/* line 70, /home/kamil/RubymineProjects/justyna/app/assets/stylesheets/bootstraply.css.scss */
+.section1 #left {
+  margin-left: 8%;
+  float: left;
+}
+/* line 74, /home/kamil/RubymineProjects/justyna/app/assets/stylesheets/bootstraply.css.scss */
+.section1 #right {
+  margin-right: 8%;
+  float: right;
+}
 
-/* line 91, /home/kamil/RubymineProjects/justyna/app/assets/stylesheets/bootstraply.css.scss */
+/* line 79, /home/kamil/RubymineProjects/justyna/app/assets/stylesheets/bootstraply.css.scss */
 .section2 {
   margin-top: 10%;
   margin-bottom: 10%;
 }
 
-/* line 95, /home/kamil/RubymineProjects/justyna/app/assets/stylesheets/bootstraply.css.scss */
+/* line 83, /home/kamil/RubymineProjects/justyna/app/assets/stylesheets/bootstraply.css.scss */
 .section3 {
   margin-top: 10%;
   margin-bottom: 10%;
 }
 
-/* line 99, /home/kamil/RubymineProjects/justyna/app/assets/stylesheets/bootstraply.css.scss */
+/* line 87, /home/kamil/RubymineProjects/justyna/app/assets/stylesheets/bootstraply.css.scss */
 .section4 {
   margin-top: 10%;
   margin-bottom: 10%;
 }
 
-/* line 103, /home/kamil/RubymineProjects/justyna/app/assets/stylesheets/bootstraply.css.scss */
+/* line 91, /home/kamil/RubymineProjects/justyna/app/assets/stylesheets/bootstraply.css.scss */
 .section5 {
   margin-top: 10%;
   margin-bottom: 10%;
 }
 
-/* line 107, /home/kamil/RubymineProjects/justyna/app/assets/stylesheets/bootstraply.css.scss */
+/* line 95, /home/kamil/RubymineProjects/justyna/app/assets/stylesheets/bootstraply.css.scss */
 .section6 {
   margin-top: 10%;
   margin-bottom: 10%;
 }
 
-/* line 111, /home/kamil/RubymineProjects/justyna/app/assets/stylesheets/bootstraply.css.scss */
+/* line 99, /home/kamil/RubymineProjects/justyna/app/assets/stylesheets/bootstraply.css.scss */
 .section7 {
   margin-top: 10%;
   margin-bottom: 10%;
 }
 
-/* line 115, /home/kamil/RubymineProjects/justyna/app/assets/stylesheets/bootstraply.css.scss */
-.section1 .col-md-4 {
-  -webkit-clip-path: polygon(25% 0, 100% 0, 100% 75%, 75% 100%, 0 100%, 0% 25%);
-  clip-path: polygon(25% 0, 100% 0, 100% 75%, 75% 100%, 0 100%, 0% 25%);
-}
-
-/* line 119, /home/kamil/RubymineProjects/justyna/app/assets/stylesheets/bootstraply.css.scss */
-.section2 .container {
-  -webkit-clip-path: polygon(40% 0, 100% 0, 100% 100%, 0 100%, 0% 38%);
-  clip-path: polygon(40% 0, 100% 0, 100% 100%, 0 100%, 0% 38%);
-}
-
-/* line 123, /home/kamil/RubymineProjects/justyna/app/assets/stylesheets/bootstraply.css.scss */
+/* line 103, /home/kamil/RubymineProjects/justyna/app/assets/stylesheets/bootstraply.css.scss */
 .content h1 {
   text-align: center;
 }
@@ -8932,11 +8962,15 @@ button.close {
 }
 @font-face {
   font-family: "Shadows Into Light Two";
-  src: url("/assets/ShadowsIntoLightTwo-Regular.ttf");
+  src: url(/assets/shadowsintolighttwo-regular-webfont-71c2e74e06454fe816a6548ae4a1971fcf2cb22f8801a11b1f31133f3c5e930d.eot) format("embedded-opentype"), url(/assets/shadowsintolighttwo-regular-webfont-79c36007946c0103d22156b6064a07d22a7ec6b722cc73fb3fd4827ae608e207.svg) format("svg"), url(/assets/shadowsintolighttwo-regular-webfont-584efd823044ed422318354ab80ff445fea18e55eea1da120e9f2d2f77195cc6.woff) format("woff"), url(/assets/shadowsintolighttwo-regular-webfont-f9742d25cce63eeb0ea0792478940f2c177a43a319646cc6743d05285602880b.woff2) format("woff2"), url(/assets/shadowsintolighttwo-regular-webfont-8447c86bba15661d454a352f231b5e7ad02060a62142410c861f9fb84922fca2.ttf) format("truetype");
+  font-weight: normal;
+  font-style: normal;
   font-family: "Terminator Real NFI";
-  src: url("/assets/terminator_real_nfi.woff");
+  src: url(/assets/Terminator-Real-NFI-V2-V1-22c7d7bed093b829c36cb31a32884e1cbeb685e725288e3daf62808ada144b41.eot) format("embedded-opentype"), url(/assets/Terminator-Real-NFI-V2-V1-4d1f2cd0249f6f0a37b35f6f951572aed70c45f6f1484c951468c149d6b3b934.svg) format("svg"), url(/assets/Terminator-Real-NFI-V2-V1-b6bfa7de1d479c100a9992f2098ff363a2628a6d4b56e2b6b08ba86d50f225e7.woff) format("woff"), url(/assets/Terminator-Real-NFI-V2-V1-3d030c614d1240fc12c2b184139c7c59410d71fe5640f574c902afdc743d7b9c.woff2) format("woff2"), url(/assets/Terminator-Real-NFI-V2-V1-62b153ea15e5c81693f91cd7c48928b02f0c122df9d357835a53955faa07bb48.ttf) format("truetype");
+  font-weight: normal;
+  font-style: normal;
 }
-/* line 136, /home/kamil/RubymineProjects/justyna/app/assets/stylesheets/bootstraply.css.scss */
+/* line 128, /home/kamil/RubymineProjects/justyna/app/assets/stylesheets/bootstraply.css.scss */
 body {
   margin-top: 80px;
   background-image: url(/uploads/system/background.jpg);
@@ -8944,7 +8978,7 @@ body {
   background-size: cover;
 }
 
-/* line 142, /home/kamil/RubymineProjects/justyna/app/assets/stylesheets/bootstraply.css.scss */
+/* line 134, /home/kamil/RubymineProjects/justyna/app/assets/stylesheets/bootstraply.css.scss */
 .jumbotron {
   margin-bottom: 10px;
   background-image: url(/uploads/system/jumbotron.jpeg);
@@ -8955,7 +8989,7 @@ body {
   text-align: center;
 }
 
-/* line 151, /home/kamil/RubymineProjects/justyna/app/assets/stylesheets/bootstraply.css.scss */
+/* line 143, /home/kamil/RubymineProjects/justyna/app/assets/stylesheets/bootstraply.css.scss */
 .jumbotron h1 {
   font-family: "Terminator Real NFI";
   text-shadow: 0 -2px 0 rgba(0, 0, 0, 0.25);
@@ -8964,70 +8998,93 @@ body {
   font-weight: bold;
 }
 
-/* line 158, /home/kamil/RubymineProjects/justyna/app/assets/stylesheets/bootstraply.css.scss */
+/* line 150, /home/kamil/RubymineProjects/justyna/app/assets/stylesheets/bootstraply.css.scss */
 .jumbotron h2 {
   font-family: "Shadows Into Light Two";
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
   font-size: 32px;
 }
 
-/* line 164, /home/kamil/RubymineProjects/justyna/app/assets/stylesheets/bootstraply.css.scss */
+/* line 156, /home/kamil/RubymineProjects/justyna/app/assets/stylesheets/bootstraply.css.scss */
 .container h1 {
   text-align: center;
   font-family: "Shadows Into Light Two" !important;
   text-shadow: 0 -1px 0 #696b7c;
-  padding-top: 40px;
-  padding-bottom: 10px;
 }
 
-/* line 171, /home/kamil/RubymineProjects/justyna/app/assets/stylesheets/bootstraply.css.scss */
+/* line 161, /home/kamil/RubymineProjects/justyna/app/assets/stylesheets/bootstraply.css.scss */
 .h1 {
   color: black !important;
   style: bold;
 }
 
-/* line 175, /home/kamil/RubymineProjects/justyna/app/assets/stylesheets/bootstraply.css.scss */
+/* line 165, /home/kamil/RubymineProjects/justyna/app/assets/stylesheets/bootstraply.css.scss */
 .span {
   color: black !important;
 }
 
-/* line 178, /home/kamil/RubymineProjects/justyna/app/assets/stylesheets/bootstraply.css.scss */
-.center {
-  text-align: center;
-}
-
-/* line 181, /home/kamil/RubymineProjects/justyna/app/assets/stylesheets/bootstraply.css.scss */
-.navbar-inverse {
-  font-family: "Shadows Into Light Two";
-  text-align: center;
-  background-color: #2e2e2e;
-  border-color: #787b8c;
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-}
-
-/* line 188, /home/kamil/RubymineProjects/justyna/app/assets/stylesheets/bootstraply.css.scss */
+/* line 168, /home/kamil/RubymineProjects/justyna/app/assets/stylesheets/bootstraply.css.scss */
 .nav {
   text-align: right;
 }
 
-/* line 191, /home/kamil/RubymineProjects/justyna/app/assets/stylesheets/bootstraply.css.scss */
+/* line 171, /home/kamil/RubymineProjects/justyna/app/assets/stylesheets/bootstraply.css.scss */
 .navbar-brand {
-  color: #34b093 !important;
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  color: #920056 !important;
+  text-shadow: 0 -1px 0 rgba(120, 123, 140, 0.25);
 }
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any styles
- * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
- * file per style scope.
- *
+/* line 4, /home/kamil/RubymineProjects/justyna/app/assets/stylesheets/images.scss */
+#images {
+  margin: 0 auto;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transform: translateZ(400px) translateY(300px) rotateX(-90deg);
+  transform: translateZ(400px) translateY(300px) rotateX(-90deg);
+  -webkit-animation: fallPerspective .8s ease-in-out forwards;
+  animation: fallPerspective .8s ease-in-out forwards;
+}
 
+@-webkit-keyframes fallPerspective {
+  100% {
+    -webkit-transform: translateZ(0px) translateY(0px) rotateX(0deg);
+    opacity: 1;
+  }
+}
+@keyframes fallPerspective {
+  100% {
+    -webkit-transform: translateZ(0px) translateY(0px) rotateX(0deg);
+    transform: translateZ(0px) translateY(0px) rotateX(0deg);
+    opacity: 1;
+  }
+}
+/* line 23, /home/kamil/RubymineProjects/justyna/app/assets/stylesheets/images.scss */
+.box {
+  margin: 5px;
+  width: 214px;
+}
 
- */
+/* line 28, /home/kamil/RubymineProjects/justyna/app/assets/stylesheets/images.scss */
+.box img {
+  width: 100%;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-shadow: 2px 2px 4px 0 #ccc;
+}
 
+/* line 36, /home/kamil/RubymineProjects/justyna/app/assets/stylesheets/images.scss */
+.img-zoom {
+  width: 310px;
+  -webkit-transition: all .2s ease-in-out;
+  -moz-transition: all .2s ease-in-out;
+  -o-transition: all .2s ease-in-out;
+  -ms-transition: all .2s ease-in-out;
+}
+
+/* line 44, /home/kamil/RubymineProjects/justyna/app/assets/stylesheets/images.scss */
+.transition {
+  -webkit-transform: scale(2);
+  -moz-transform: scale(2);
+  -o-transform: scale(2);
+  transform: scale(2);
+}
