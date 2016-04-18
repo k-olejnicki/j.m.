@@ -32,3 +32,18 @@
   -webkit-box-sizing: border-box;
   box-shadow: 2px 2px 4px 0 #ccc;
 }
+
+.img-zoom {
+  width: 310px;
+  -webkit-transition: all .2s ease-in-out;
+  -moz-transition: all .2s ease-in-out;
+  -o-transition: all .2s ease-in-out;
+  -ms-transition: all .2s ease-in-out;
+}
+
+.transition {
+  -webkit-transform: scale(2);
+  -moz-transform: scale(2);
+  -o-transform: scale(2);
+  transform: scale(2);
+}
