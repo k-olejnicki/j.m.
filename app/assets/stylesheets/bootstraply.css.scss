@@ -107,7 +107,24 @@ body
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-
+@font-face {
+  font-family: "Shadows Into Light Two";
+  src: font-url( asset-path("shadowsintolighttwo-regular-webfont.eot") ) format('embedded-opentype'),
+  font-url( asset-path("shadowsintolighttwo-regular-webfont.svg") ) format('svg'),
+  font-url( asset-path("shadowsintolighttwo-regular-webfont.woff") ) format('woff'),
+  font-url( asset-path("shadowsintolighttwo-regular-webfont.woff2") ) format('woff2'),
+  font-url( asset-path("shadowsintolighttwo-regular-webfont.ttf") ) format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-family: "Terminator Real NFI";
+  src: font-url( asset-path("Terminator-Real-NFI-V2-V1.eot") ) format('embedded-opentype'),
+  font-url( asset-path("Terminator-Real-NFI-V2-V1.svg") ) format('svg'),
+  font-url( asset-path("Terminator-Real-NFI-V2-V1.woff") ) format('woff'),
+  font-url( asset-path("Terminator-Real-NFI-V2-V1.woff2") ) format('woff2'),
+  font-url( asset-path("Terminator-Real-NFI-V2-V1.ttf") ) format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
 body {
   margin-top: 80px;
   background-image: url(/uploads/system/background.jpg);
