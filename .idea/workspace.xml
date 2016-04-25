@@ -2,21 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8415392b-5c3e-492d-b420-11847339f1e0" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/bootstraply.css.scss" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/application.css" afterPath="$PROJECT_DIR$/app/assets/stylesheets/application.css.scss" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile" afterPath="$PROJECT_DIR$/Gemfile" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile.lock" afterPath="$PROJECT_DIR$/Gemfile.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/comments.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/comments.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/home.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/home.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/images.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/images.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/initializers/assets.rb" afterPath="$PROJECT_DIR$/config/initializers/assets.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/application-01072cf2f993635b376cf568f6f00c87d85cb7b018e88627075859bb43d1d201.css" afterPath="$PROJECT_DIR$/public/assets/application-01072cf2f993635b376cf568f6f00c87d85cb7b018e88627075859bb43d1d201.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/application-120dc43450ab175a12adaa654deb0208dd227a417c5c5969da9baaa93f76568e.css" afterPath="$PROJECT_DIR$/public/assets/application-120dc43450ab175a12adaa654deb0208dd227a417c5c5969da9baaa93f76568e.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/application-3a34803637c243436fff14577486297f4d09d890518eb1a1d1de1cfdcd40fdac.css" afterPath="$PROJECT_DIR$/public/assets/application-3a34803637c243436fff14577486297f4d09d890518eb1a1d1de1cfdcd40fdac.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/application-9410e903688d0f5be5f5a452f8204f1aaeacef1c1aa11952a53e5f9f22fc6b17.css" afterPath="$PROJECT_DIR$/public/assets/application-9410e903688d0f5be5f5a452f8204f1aaeacef1c1aa11952a53e5f9f22fc6b17.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/application-b1731b966930e43018efc06c432cf6cab5a71ad22b368279bbae4b34f3ce686c.css" afterPath="$PROJECT_DIR$/public/assets/application-b1731b966930e43018efc06c432cf6cab5a71ad22b368279bbae4b34f3ce686c.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/application-b654a0893d1501bdbb65333fc1c32cfa019f67d8f3152e04acbbfcc4f8984df9.css" afterPath="$PROJECT_DIR$/public/assets/application-b654a0893d1501bdbb65333fc1c32cfa019f67d8f3152e04acbbfcc4f8984df9.css" />
     </list>
     <ignored path="justyna.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -66,7 +52,7 @@
       <file leaf-file-name="application.css.scss" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/application.css.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.047089603">
+            <state vertical-scroll-proportion="0.14920874">
               <caret line="11" column="16" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="16" />
               <folding />
             </state>
@@ -966,7 +952,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="-4" width="1050" height="1684" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.35458168" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -976,7 +962,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.12736444" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12736444" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3997478" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1366,7 +1352,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/application.css.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.047089603">
+        <state vertical-scroll-proportion="0.14920874">
           <caret line="11" column="16" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="16" />
           <folding />
         </state>
