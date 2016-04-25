@@ -237,6 +237,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  autoprefixer-rails
   aws-sdk
   better_errors
   bootstrap-sass

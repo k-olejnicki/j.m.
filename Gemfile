@@ -17,6 +17,7 @@ gem 'paperclip'
 gem 'rmagick'
 gem 'masonry-rails'
 gem 'aws-sdk'
+gem 'autoprefixer-rails'
 
 group :development, :test do
   gem 'sqlite3'
