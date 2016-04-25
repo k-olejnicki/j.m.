@@ -125,7 +125,7 @@ body
 
 
 @font-face {
-  font-family: "Shadows Into Light Two";
+  font-family: "Shadows Into Light Two" !important;
   src: font-url( asset-path("shadowsintolighttwo-regular-webfont.eot") ) format('embedded-opentype'),
   font-url( asset-path("shadowsintolighttwo-regular-webfont.svg") ) format('svg'),
   font-url( asset-path("shadowsintolighttwo-regular-webfont.woff") ) format('woff'),
@@ -133,7 +133,7 @@ body
   font-url( asset-path("shadowsintolighttwo-regular-webfont.ttf") ) format('truetype');
   font-weight: normal;
   font-style: normal;
-  font-family: "Terminator Real NFI";
+  font-family: "Terminator Real NFI" !important;
   src: font-url( asset-path("Terminator-Real-NFI-V2-V1.eot") ) format('embedded-opentype'),
   font-url( asset-path("Terminator-Real-NFI-V2-V1.svg") ) format('svg'),
   font-url( asset-path("Terminator-Real-NFI-V2-V1.woff") ) format('woff'),
@@ -154,18 +154,18 @@ body {
   background-size: cover;
   background-attachment:fixed;
   background-position: 0% 7%;
-  font-family: "Shadows Into Light Two";
+  font-family: "Shadows Into Light Two" !important;
   text-align: center;
 }
 .jumbotron h1 {
-  font-family: "Terminator Real NFI";
+  font-family: "Terminator Real NFI" !important;
   text-shadow: 0 -2px 0 rgba(0, 0, 0, 0.25);
   color: #57597c;
   font-size: 68px;
   font-weight: bold;
 }
 .jumbotron h2 {
-  font-family: "Shadows Into Light Two";
+  font-family: "Shadows Into Light Two" !important;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
 
   font-size: 32px;
