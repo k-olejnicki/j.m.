@@ -1,13 +1,22 @@
-<div class="row">
-  <div class="col-md-offset-2 col-md-8">
-    <div class="panel panel-default">
-      <div class="panel-heading center"><%= @comment.author %></div>
-      <div class="panel-body">
-        <%= @comment.gender %><br/>
-        <br/><%= @comment.body %><br/>
-          <%= link_to 'Edycja', edit_comment_path(@comment) %> |
-        <%= link_to 'Wstecz', comment_path %>
-      </div>
-    </div>
-  </div>
-</div>
+<p id="notice"><%= notice %></p>
+<p>
+  <strong>Autor:</strong>
+  <%= comment.author %>
+</p>
+<p>
+  <strong>Autor:</strong>
+  <%= comment.author %>
+</p>
+
+<p>
+  <strong>Contents:</strong>
+  <%= comment.body %>
+</p>
+
+<p>
+  <strong>Admin_id:</strong>
+  <%= comment.admin_id %>
+</p>
+
+<%= link_to 'Edit', edit_comment_url(:id) %> |
+<%= link_to 'Back', comments_url(:id) %>

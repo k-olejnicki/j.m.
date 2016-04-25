@@ -1,4 +1,4 @@
-<%= form_for @image,html: {multipart: true} do |i| %>
+<%= form_for (Image.new),html: {multipart: true} do |i| %>
     <% if @image.errors.any? %>
         <div id="error_explanation">
           <h2><%= pluralize(@image.errors.count, "error") %> prohibited this image from being saved:</h2>
@@ -24,17 +24,18 @@
           <div class="actions">
             <%= i.submit "Dodaj zdjęcie" %>
           </div>
+      </div>
       <% end %>
-    </div>
 </div>
-
-<%= form_for @comment do |c| %>
+</div>
+<%= form_for (Comment.new) do |c| %>
+      <div class="panel panel-default">
     <div class="panel-heading"><center><h1>Dodawanie Komentarzy</h1></center></div>
         <div class="field">
           <%= c.label :gender,"Płeć" %><br />
-          <%= c.label :gender, "Mężczyzna", :value => "M"  %>
+          <%= c.label :gender, "Mężczyzna", :value => "True"  %>
           <%= c.radio_button :gender, true %>
-          <%= c.label :gender, "Kobieta", :value => "K" %>
+          <%= c.label :gender, "Kobieta", :value => "False" %>
           <%= c.radio_button :gender, false, :checked => true %>
         </div>
           <div class="form-group">
@@ -52,7 +53,6 @@
             <% end %>
     </div>
 </div>
-
 <table>
   <tbody>
   <div class="panel panel-default">
@@ -79,36 +79,31 @@
   </div>
   </tbody>
 </table>
-
 <table>
   <tbody>
-  <div class="panel panel-default">
-    <div class="panel-heading"><center><h1>Komentarze</h1></center></div>
-    <div class="panel-body">
-      <% @comments.each do |comment| %>
+    <div class="panel panel-default">
+      <div class="panel-heading"><center><h1>Komentarze</h1></center></div>
+      <div class="panel-body">
+        <% @comments.each do |comment| %>
           <div id="images" class="transitions-enabled">
             <div class="box">
               <div class="panel panel-default">
-                <%= comment.gender %>
-                <%= comment.author %>
+              <% if Comment.where(gender: "True") %>
+                  <img class="circular" <%= image_tag('/uploads/system/mezczyzna.jpg')%></br>
+              <% else %>
+                  <img class="circular" <%= image_tag('/uploads/system/kobieta.jpg')%></br>
+              <%end%>
                 <div class="panel-body">
-                  <%= comment.body %>
+                  <p><%= comment.author %></p>
                 </div>
                 <div class="panel-footer">
-                  <%= button_to 'Show', comment %><br/>
-                  <%= button_to 'Edit', edit_comment_path(comment) %><br/>
-                  <%= button_to 'Destroy', comment, method: :delete, data: { confirm: 'Are you sure?' } %><br/>
+              <p><%= comment.body %></p>
                 </div>
               </div>
             </div>
-      <% end %>
+          </div>
+        <% end %>
       </div>
     </div>
-  </div>
   </tbody>
 </table>
-
-<br>
-<div class="actions">
-<%= button_to 'Powrót do Strony Głównej', root_path %>
-</div>

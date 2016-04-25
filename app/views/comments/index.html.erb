@@ -5,10 +5,13 @@
        <div class="panel-body">
           <%= c.author %><br/>
        </div>
+       <div class="panel-body">
+         <%= c.body %><br/>
+       </div>
        <div class="panel-footer">
-         <%= link_to 'Edytuj', edit_comment_path(comment) %><br/>
-         <%= link_to 'Usuń', comment, method: :delete, data: { confirm: 'Jesteś pewien?' } %><br/>
+         <%= link_to 'Edytuj', edit_comment_url(:id) %><br/>
+         <%= link_to 'Usuń', comment_url(:id), method: :delete, data: { confirm: 'Jesteś pewien?' } %><br/>
        </div>
      </div>
    </div>
-  <% end %>
+<% end %>

@@ -89,16 +89,20 @@
     <div class="page-header">
       <h1>Opinie Klientów</h1>
     </div>
-    <% if @comment.gender='True' %>
-        <%= puts image_tag('/uploads/system/mezczyzna.jpg')%>
-       <% else %>
-        <%= puts image_tag('/uploads/system/kobieta.jpg')%>
-    <%end%>
+    <div id="images" class="transitions-enabled">
       <% @comments.each do |comment| %>
-            <%= comment.author %>
-            <%= comment.body %>
+          <div class="box">
+        <% if Comment.where(gender: "True") %>
+            <img class="circular" <%= image_tag('/uploads/system/mezczyzna.jpg')%></br>
+        <% else %>
+            <img class="circular" <%= image_tag('/uploads/system/kobieta.jpg')%></br>
+        <%end%>
+            <p><%= comment.author %></p>
+            <p><%= comment.body %></p>
+          </div>
       <% end %>
     </div>
+  </div>
 </section>
 
 <!-- Section #4 -->

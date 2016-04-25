@@ -1,4 +1,4 @@
-<%= form_for @comment do |c| %>
+<%= form_for (Comment.new) do |c| %>
     <div class="panel-heading"><center><h1>Dodawanie Komentarzy</h1></center></div>
     <div class="field">
       <%= c.hidden_field :admin_id, :value => current_admin.id  %>
