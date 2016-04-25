@@ -1,10 +1,11 @@
 <%= form_for @comment do |c| %>
     <div class="panel-heading"><center><h1>Dodawanie Komentarzy</h1></center></div>
     <div class="field">
+      <%= c.hidden_field :admin_id, :value => current_admin.id  %>
       <%= c.label :gender,"Płeć" %><br />
-      <%= c.label :gender, "Mężczyzna", :value => "M"  %>
+      <%= c.label :gender, "Mężczyzna", :value => "True"  %>
       <%= c.radio_button :gender, true %>
-      <%= c.label :gender, "Kobieta", :value => "K" %>
+      <%= c.label :gender, "Kobieta", :value => "False" %>
       <%= c.radio_button :gender, false, :checked => true %>
     </div>
     <div class="form-group">
@@ -17,7 +18,7 @@
     </div>
     <div class="panel-footer">
       <div class="actions">
-        <%= c.submit "Dodaj kommentarz" %>
+        <%= c.submit "Dodaj kommentarz"%>
       </div>
 <% end %>
 </div>

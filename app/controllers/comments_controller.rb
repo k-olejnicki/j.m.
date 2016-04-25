@@ -14,7 +14,7 @@ class CommentsController < ApplicationController
 
     # GET /comments/new
     def new
-      @comment = Comment.new
+      @comment = current_admin.comments.build
     end
 
     # GET /comments/1/edit
@@ -24,7 +24,7 @@ class CommentsController < ApplicationController
     # POST /comments
     # POST /comments.json
     def create
-      @comment = Comment.new(comment_params)
+      @comment = current_admin.comments.build(comment_params)
 
       respond_to do |format|
         if @comment.save
@@ -41,7 +41,7 @@ class CommentsController < ApplicationController
     # PATCH/PUT /comments/1.json
     def update
       respond_to do |format|
-        if @comment.update(image_params)
+        if @comment.update(comment_params)
           format.html { redirect_to @comment, notice: 'Comment was successfully updated.' }
           format.json { render :show, status: :ok, location: @comment }
         else
@@ -69,6 +69,6 @@ class CommentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def comment_params
-      params.require(:comment).permit(:id, :gender, :author, :body)
+      params.require(:comment).permit(:id, :gender, :author, :body, :admin_id)
     end
 end
