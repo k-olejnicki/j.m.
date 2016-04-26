@@ -10,7 +10,7 @@ $brand-primary: #920056;
 $navbar-default-brand-color: #77003c;
 $navbar-default-brand-color: #b7a5bf;
 $component-active-color: #ffffff;
-
+$font-family-sans-serif: "Shadows Into Light Two";
 $color-header: rgb(105, 107, 124);
 $color-feature: #ed2329;
 $shadow-big: 5px 5px 15px rgba(0, 0, 0, 0.2);
@@ -18,7 +18,7 @@ $shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
 
 .navbar-collapse {
   text-align: center;
-  font-family: "Shadows Into Light Two";
+  font-family: "Shadows Into Light Two", serif;
   border-color: #787b8c;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
   color: #920056 !important;
@@ -28,6 +28,7 @@ $shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
 }
 body
 .scrollToTop {
+  text-align: center;
   margin: 0;
   position: fixed;
   bottom: 8.5%;
@@ -60,6 +61,13 @@ body
 .circular img {
   opacity: 0;
   filter: alpha(opacity=0);
+}
+#icon {
+  max-width: 32px;
+  max-height: 32px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+  -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+  -moz-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
 }
 .fa-chevron-up {
   color: white;
@@ -106,7 +114,7 @@ body
 
 
 @font-face {
-  font-family: "Shadows Into Light Two";
+  font-family: "Shadows Into Light Two", serif;
   src: font-url(asset-path("shadowsintolighttwo-regular-webfont.eot")) format('embedded-opentype'),
   font-url(asset-path("shadowsintolighttwo-regular-webfont.svg")) format('svg'),
   font-url(asset-path("shadowsintolighttwo-regular-webfont.woff")) format('woff'),
@@ -116,7 +124,7 @@ body
   font-style: normal;
 }
 @font-face {
-  font-family: "Terminator Real NFI";
+  font-family: "Terminator Real NFI", serif;
   src: font-url( asset-path("Terminator-Real-NFI-V2-V1.eot") ) format('embedded-opentype'),
   font-url( asset-path("Terminator-Real-NFI-V2-V1.svg") ) format('svg'),
   font-url( asset-path("Terminator-Real-NFI-V2-V1.woff") ) format('woff'),
@@ -141,30 +149,29 @@ body {
   background-size: cover;
   background-attachment:fixed;
   background-position: 0% 7%;
-  font-family: "Shadows Into Light Two";
+  font-family: "Shadows Into Light Two", serif;
   text-align: center;
 }
 .jumbotron h1 {
-  font-family: "Terminator Real NFI";
+  font-family: "Terminator Real NFI", serif;
   text-shadow: 0 -2px 0 rgba(0, 0, 0, 0.25);
   color: #57597c;
   font-size: 68px;
   font-weight: bold;
 }
 .jumbotron h2 {
-  font-family: "Shadows Into Light Two";
+  font-family: "Shadows Into Light Two", serif;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
 
   font-size: 32px;
 }
 .container h1 {
   text-align: center;
-  font-family: "Shadows Into Light Two" !important;
+  font-family: "Shadows Into Light Two", serif !important;
   text-shadow: 0 -1px 0 rgba(105, 107, 124, 3.9);
 }
 .h1 {
   color: black !important;
-  style: bold;
 }
 .span {
   color: black !important;
@@ -176,3 +183,125 @@ body {
   color: #920056 !important;
   text-shadow: 0 -1px 0 rgba(120, 123, 140, 0.25);
 }
+
+
+.swiper-slide{
+  margin-left: 12%;
+  max-width: 260px;
+  background-color: #dfc2e4;
+  padding: 30px;
+  position: relative;
+  text-shadow: 0 -1px 0 rgba(120, 123, 140, 0.25);
+  box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+  -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+  -moz-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+
+  &::before{
+    content: 'promocja';
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-top: 25px;
+    margin-right: -26px;
+    color: white;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 12px;
+    line-height: 20px;
+    transform: rotate(45deg);
+    border-bottom: 20px solid red;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    height: 0;
+    width: 120px;
+    text-shadow: 0 -1px 0 rgba(120, 123, 140, 0.25);
+  }
+}
+.swiper-slide-middle{
+  margin-left: 13%;
+  max-width: 260px;
+  background-color: #92cd4f;
+  padding: 30px;
+  position: relative;
+  text-shadow: 0 -1px 0 rgba(120, 123, 140, 0.25);
+  box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+  -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+  -moz-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+
+  &::before {
+    content: 'promocja';
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-top: 25px;
+    margin-right: -26px;
+    color: white;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 12px;
+    line-height: 20px;
+    transform: rotate(45deg);
+    border-bottom: 20px solid red;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    height: 0;
+    width: 120px;
+    text-shadow: 0 -1px 0 rgba(120, 123, 140, 0.25);
+  }
+}
+.swiper-slide-right{
+  margin-left: 15%;
+  max-width: 260px;
+  background-color: #e7c430;
+  padding: 30px;
+  position: relative;
+  text-shadow: 0 -1px 0 rgba(120, 123, 140, 0.25);
+  box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+  -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+  -moz-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+
+  &::before {
+    content: 'promocja';
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-top: 25px;
+    margin-right: -26px;
+    color: white;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 12px;
+    line-height: 20px;
+    transform: rotate(45deg);
+    border-bottom: 20px solid red;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    height: 0;
+    width: 120px;
+    text-shadow: 0 -1px 0 rgba(120, 123, 140, 0.25);
+  }
+}
+.offer-header{
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 15px;
+  color: #920056;
+  font-size: 1.4rem;
+}
+
+.offer-lead{
+  margin: 0;
+  padding: 0;
+  margin-bottom: 15px;
+  color: #323537;
+  font-size: 1.2rem;
+}
+
+.offer-link{
+  padding: 0;
+  margin: 0;
+  color: #4256ca;
+  font-size: 1.2rem;
+}
+.offer-price{}
