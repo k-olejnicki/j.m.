@@ -111,80 +111,6 @@ body
 .content h1 {
   text-align: center;
 }
-
-
-@font-face {
-  font-family: "Shadows Into Light Two", serif;
-  src: font-url(asset-path("shadowsintolighttwo-regular-webfont.eot")) format('embedded-opentype'),
-  font-url(asset-path("shadowsintolighttwo-regular-webfont.svg")) format('svg'),
-  font-url(asset-path("shadowsintolighttwo-regular-webfont.woff")) format('woff'),
-  font-url(asset-path("shadowsintolighttwo-regular-webfont.woff2")) format('woff2'),
-  font-url(asset-path("shadowsintolighttwo-regular-webfont.ttf")) format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Terminator Real NFI", serif;
-  src: font-url( asset-path("Terminator-Real-NFI-V2-V1.eot") ) format('embedded-opentype'),
-  font-url( asset-path("Terminator-Real-NFI-V2-V1.svg") ) format('svg'),
-  font-url( asset-path("Terminator-Real-NFI-V2-V1.woff") ) format('woff'),
-  font-url( asset-path("Terminator-Real-NFI-V2-V1.woff2") ) format('woff2'),
-  font-url( asset-path("Terminator-Real-NFI-V2-V1.ttf") ) format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@import "bootstrap-sprockets";
-@import "bootstrap";
-
-body {
-  margin-top: 80px;
-  background-image: url(/uploads/system/background.jpg);
-  background-attachment:fixed;
-  background-size: cover;
-}
-.jumbotron {
-  margin-bottom: 10px;
-  background-image: url(/uploads/system/jumbotron.jpeg);
-  background-size: cover;
-  background-attachment:fixed;
-  background-position: 0% 7%;
-  font-family: "Shadows Into Light Two", serif;
-  text-align: center;
-}
-.jumbotron h1 {
-  font-family: "Terminator Real NFI", serif;
-  text-shadow: 0 -2px 0 rgba(0, 0, 0, 0.25);
-  color: #57597c;
-  font-size: 68px;
-  font-weight: bold;
-}
-.jumbotron h2 {
-  font-family: "Shadows Into Light Two", serif;
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-
-  font-size: 32px;
-}
-.container h1 {
-  text-align: center;
-  font-family: "Shadows Into Light Two", serif !important;
-  text-shadow: 0 -1px 0 rgba(105, 107, 124, 3.9);
-}
-.h1 {
-  color: black !important;
-}
-.span {
-  color: black !important;
-}
-.nav {
-  text-align: right;
-}
-.navbar-brand {
-  color: #920056 !important;
-  text-shadow: 0 -1px 0 rgba(120, 123, 140, 0.25);
-}
-
-
 .swiper-slide{
   margin-left: 12%;
   max-width: 260px;
@@ -305,3 +231,75 @@ body {
   font-size: 1.2rem;
 }
 .offer-price{}
+
+
+@font-face {
+  font-family: "Shadows Into Light Two", serif;
+  src: font-url(asset-path("shadowsintolighttwo-regular-webfont.eot")) format('embedded-opentype'),
+  font-url(asset-path("shadowsintolighttwo-regular-webfont.svg")) format('svg'),
+  font-url(asset-path("shadowsintolighttwo-regular-webfont.woff")) format('woff'),
+  font-url(asset-path("shadowsintolighttwo-regular-webfont.woff2")) format('woff2'),
+  font-url(asset-path("shadowsintolighttwo-regular-webfont.ttf")) format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Terminator Real NFI", serif;
+  src: font-url( asset-path("Terminator-Real-NFI-V2-V1.eot") ) format('embedded-opentype'),
+  font-url( asset-path("Terminator-Real-NFI-V2-V1.svg") ) format('svg'),
+  font-url( asset-path("Terminator-Real-NFI-V2-V1.woff") ) format('woff'),
+  font-url( asset-path("Terminator-Real-NFI-V2-V1.woff2") ) format('woff2'),
+  font-url( asset-path("Terminator-Real-NFI-V2-V1.ttf") ) format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+body {
+  margin-top: 80px;
+  background-image: url(/uploads/system/background.jpg);
+  background-attachment:fixed;
+  background-size: cover;
+}
+.jumbotron {
+  margin-bottom: 10px;
+  background-image: url(/uploads/system/jumbotron.jpeg);
+  background-size: cover;
+  background-attachment:fixed;
+  background-position: 0% 7%;
+  font-family: "Shadows Into Light Two", serif;
+  text-align: center;
+}
+.jumbotron h1 {
+  font-family: "Terminator Real NFI", serif;
+  text-shadow: 0 -2px 0 rgba(0, 0, 0, 0.25);
+  color: #57597c;
+  font-size: 68px;
+  font-weight: bold;
+}
+.jumbotron h2 {
+  font-family: "Shadows Into Light Two", serif;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+
+  font-size: 32px;
+}
+.container h1 {
+  text-align: center;
+  font-family: "Shadows Into Light Two", serif !important;
+  text-shadow: 0 -1px 0 rgba(105, 107, 124, 3.9);
+}
+.h1 {
+  color: black !important;
+}
+.span {
+  color: black !important;
+}
+.nav {
+  text-align: right;
+}
+.navbar-brand {
+  color: #920056 !important;
+  text-shadow: 0 -1px 0 rgba(120, 123, 140, 0.25);
+}
