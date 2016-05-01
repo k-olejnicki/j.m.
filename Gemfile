@@ -17,6 +17,9 @@ gem 'paperclip'
 gem 'rmagick'
 gem 'masonry-rails'
 gem 'aws-sdk'
+source "https://rails-assets.org" do
+  gem 'rails-assets-bootstrap-multiselect'
+end
 
 group :development, :test do
   gem 'sqlite3'
