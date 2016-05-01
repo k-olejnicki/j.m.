@@ -16,5 +16,6 @@
 //= require turbolinks
 //= require bootstrap-sprockets
 //= require bootstrap
+//= require bootstrap-multiselect
 //= require masonry/jquery.masonry
 //= require_tree .
