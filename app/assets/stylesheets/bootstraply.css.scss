@@ -300,11 +300,12 @@ body {
 #footer th {
   padding-left: 4%;
 }
-.fa-facebook-square a:hover {
-  text-decoration:none;
-}
 .fa-facebook-square {
   color: #3b5998;
 }
+.fa-facebook-square a:hover {
+  text-decoration:none;
+}
+
 @import "bootstrap-sprockets";
 @import "bootstrap";
