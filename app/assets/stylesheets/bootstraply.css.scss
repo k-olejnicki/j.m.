@@ -293,27 +293,18 @@ body {
   color: #920056 !important;
   text-shadow: 0 -1px 0 rgba(120, 123, 140, 0.25);
 }
-
-@font-face {
-  font-family: "Shadows Into Light Two", serif;
-  src: font-url(asset-path("shadowsintolighttwo-regular-webfont.eot")) format('embedded-opentype'),
-  font-url(asset-path("shadowsintolighttwo-regular-webfont.svg")) format('svg'),
-  font-url(asset-path("shadowsintolighttwo-regular-webfont.woff")) format('woff'),
-  font-url(asset-path("shadowsintolighttwo-regular-webfont.woff2")) format('woff2'),
-  font-url(asset-path("shadowsintolighttwo-regular-webfont.ttf")) format('truetype');
-  font-weight: normal;
-  font-style: normal;
+#footer {
+  min-height: 45px;
+  max-height: 300px;
 }
-@font-face {
-  font-family: "Terminator Real NFI", serif;
-  src: font-url( asset-path("Terminator-Real-NFI-V2-V1.eot") ) format('embedded-opentype'),
-  font-url( asset-path("Terminator-Real-NFI-V2-V1.svg") ) format('svg'),
-  font-url( asset-path("Terminator-Real-NFI-V2-V1.woff") ) format('woff'),
-  font-url( asset-path("Terminator-Real-NFI-V2-V1.woff2") ) format('woff2'),
-  font-url( asset-path("Terminator-Real-NFI-V2-V1.ttf") ) format('truetype');
-  font-weight: normal;
-  font-style: normal;
+#footer th {
+  padding-left: 4%;
 }
-
+.fa-facebook-square a:hover {
+  text-decoration:none;
+}
+.fa-facebook-square {
+  color: #3b5998;
+}
 @import "bootstrap-sprockets";
 @import "bootstrap";
