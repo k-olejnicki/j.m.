@@ -89,19 +89,42 @@
     <div class="page-header">
       <h1>Opinie Klientów</h1>
     </div>
-    <div id="images" class="transitions-enabled">
-      <% @comments.each do |comment| %>
-          <div class="box">
-        <% if Comment.where(gender: "True") %>
-            <img class="circular" <%= image_tag('/uploads/system/mezczyzna.jpg')%></br>
-        <% else %>
-            <img class="circular" <%= image_tag('/uploads/system/kobieta.jpg')%></br>
-        <%end%>
-            <p><%= comment.author %></p>
-            <p><%= comment.body %></p>
+    <div class="carousel slide" id="myCarousel">
+            <div class="carousel-inner">
+              <div class="item active"><!-- /Slidestatic -->
+                    <div class="thumbnail">
+                      <img class="circular" <%= image_tag('/uploads/system/mezczyzna.jpg')%></br>
+                    </div>
+                    <div class="caption">
+                      <h3>Alicja Janicka</h3>
+                      <p>"Polecam:) Pełen profesjonalizm i dokładność."</p>
+                    </div>
+                <div class="control-box">
+                  <a data-slide="prev" href="#myCarousel" class="carousel-control left">‹</a>
+                  <a data-slide="next" href="#myCarousel" class="carousel-control right">›</a>
+                </div><!-- /.control-box -->
+              </div><!-- /Slideactive -->
+                  <div class="item">
+                    <% @comments.each do |comment| %>
+                    <div class="thumbnail">
+                      <% if Comment.where(gender: "True") %>
+                          <img class="circular" <%= image_tag('/uploads/system/mezczyzna.jpg')%></br>
+                      <% else %>
+                          <img class="circular" <%= image_tag('/uploads/system/kobieta.jpg')%></br>
+                      <%end%>
+                    </div>
+                    <div class="caption">
+                      <h3><%= comment.author %></h3>
+                      <p><%= comment.body %></p>
+                    </div>
+              <% end %>
+                <div class="control-box">
+                  <a data-slide="prev" href="#myCarousel" class="carousel-control left">‹</a>
+                  <a data-slide="next" href="#myCarousel" class="carousel-control right">›</a>
+                </div><!-- /.control-box -->
+          </div><!-- /#myCarousel -->
+            </div>
           </div>
-      <% end %>
-    </div>
   </div>
 </section>
 

@@ -9,3 +9,8 @@ $(window).scroll ->
 $('.scrollToTop').click ->
   $('html, body').animate { scrollTop: 0 }, 500
   false
+
+# Carousel Auto-Cycle
+$(document).ready ->
+  $('.carousel').carousel interval: 6000
+  return

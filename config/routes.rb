@@ -1,16 +1,16 @@
 Rails.application.routes.draw do
-  resources :images
-  resources :comments
-  devise_for :admins
-    get '/admin' => 'images#index'
-  devise_scope :admin do
-    get '/new' => 'devise/registrations#new'
-    get '/login' => 'devise/sessions#new'
-    get '/logout' => 'devise/sessions#destroy'
-    get '/show' => 'images#show'
-  end
-  post '/' => 'home#index'
-  root 'home#index'
+  #resources :images
+  #resources :comments
+  #devise_for :admins
+  #  get '/admin' => 'images#index'
+  #devise_scope :admin do
+  #  get '/new' => 'devise/registrations#new'
+  #  get '/login' => 'devise/sessions#new'
+  #  get '/logout' => 'devise/sessions#destroy'
+  #  get '/show' => 'images#show'
+  #end
+  #post '/' => 'home#index'
+  root 'home#indexerror'
 
 
   # The priority is based upon order of creation: first created -> highest priority.

@@ -16,7 +16,7 @@
       <div class="panel-heading"><h1><%=yield(:title)%></h1></div>
       <div class="panel-body">
         <div class="field">
-          <%= f.hidden_field :admin_id %>
+          <%= f.hidden_field :admin_id, value: @admin.id %>
         </div>
         <div class="form-group">
           <%= f.label :image, "Obraz" %>

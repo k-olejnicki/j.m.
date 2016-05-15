@@ -1,8 +1,10 @@
 <p id="notice"><%= notice %></p>
+<p>
+  <strong>Admin_Id</strong>
+</p>
 
 <p>
-  <strong>Admin:</strong>
-  <%= @image.admin_id %>
+  <strong>Img:</strong>
   <%= link_to image_tag(@image.img.url(:original)), @image.img.url %>
 </p>
 

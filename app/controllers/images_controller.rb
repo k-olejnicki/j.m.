@@ -1,6 +1,5 @@
 class ImagesController < ApplicationController
-  before_action :authenticate_admin!
-
+  before_action :authenticate_admin!, only:[:show]
   # GET /images
   # GET /images.json
   def index
@@ -72,6 +71,6 @@ class ImagesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def image_params
-      params.require(:image).permit(:admin_id, :img, :id)
+      params.require(:image).permit(:id, :admin_id, :img)
     end
 end

@@ -1,21 +1,17 @@
 <p id="notice"><%= notice %></p>
 <p>
   <strong>Autor:</strong>
-  <%= comment.author %>
-</p>
-<p>
-  <strong>Autor:</strong>
-  <%= comment.author %>
+  <%= @comment.author %>
 </p>
 
 <p>
   <strong>Contents:</strong>
-  <%= comment.body %>
+  <%= @comment.body %>
 </p>
 
 <p>
   <strong>Admin_id:</strong>
-  <%= comment.admin_id %>
+  <%= @comment.admin_id %>
 </p>
 
 <%= link_to 'Edit', edit_comment_url(:id) %> |
