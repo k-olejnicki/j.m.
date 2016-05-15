@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   #  get '/logout' => 'devise/sessions#destroy'
   #  get '/show' => 'images#show'
   #end
-  #post '/' => 'home#index'
+  post '/' => 'home#indexerror'
   root 'home#indexerror'
 
 
