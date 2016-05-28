@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.2.3'
+ruby '2.3.1'
 gem 'rails', '4.2.5'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
@@ -17,6 +17,7 @@ gem 'paperclip'
 gem 'rmagick'
 gem 'masonry-rails'
 gem 'aws-sdk'
+
 source "https://rails-assets.org" do
   gem 'rails-assets-bootstrap-multiselect'
 end
@@ -25,6 +26,7 @@ group :development, :test do
   gem 'sqlite3'
   gem 'byebug'
   gem 'better_errors'
+  gem 'foreman'
 end
 
 group :development do

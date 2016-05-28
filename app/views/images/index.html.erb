@@ -1,4 +1,4 @@
-<%= form_for (Image.new),html: {multipart: true} do |i| %>
+<%= form_for (Image.new), html: {multipart: true} do |i| %>
     <% if @image.errors.any? %>
         <div id="error_explanation">
           <h2><%= pluralize(@image.errors.count, "error") %> prohibited this image from being saved:</h2>
@@ -10,100 +10,245 @@
           </ul>
         </div>
     <% end %>
-<div class="panel panel-default">
-  <div class="panel-heading"><h1>Administracja Stroną</h1></div>
-    <div class="panel-body">
-      <div class="field">
-        <%= i.hidden_field :admin_id %>
+    <div class="panel panel-default">
+      <div class="panel-heading"><h1>Administracja Stroną</h1></div>
       </div>
+    <div class="panel panel-default">
+      <div class="panel-heading"><h1>Dodawanie zdjęć</h1></div>
+      <div class="panel-body">
+        <div class="field">
+          <%= i.hidden_field :admin_id, :value => current_admin.id %>
+        </div>
         <div class="form-group">
           <%= i.label :img, "Obraz" %>
           <%= i.file_field :img, class: "form-control" %>
         </div>
-      <div class="panel-footer">
+        <div class="panel-footer">
           <div class="actions">
             <%= i.submit "Dodaj zdjęcie" %>
           </div>
-      </div>
-      <% end %>
+        </div>
+<% end %>
 </div>
 </div>
 <%= form_for (Comment.new) do |c| %>
-      <div class="panel panel-default">
-    <div class="panel-heading"><center><h1>Dodawanie Komentarzy</h1></center></div>
-        <div class="field">
-          <%= c.label :gender,"Płeć" %><br />
-          <%= c.label :gender, "Mężczyzna", :value => "True"  %>
-          <%= c.radio_button :gender, true %>
-          <%= c.label :gender, "Kobieta", :value => "False" %>
-          <%= c.radio_button :gender, false, :checked => true %>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <center><h1>Dodawanie Komentarzy</h1></center>
+      </div>
+      <div class="field">
+        <%= c.hidden_field :admin_id, :value => current_admin.id %>
+        <%= c.label :gender, "Płeć" %><br/>
+        <%= c.label :gender, "Mężczyzna", :value => "True" %>
+        <%= c.radio_button :gender, true %>
+        <%= c.label :gender, "Kobieta", :value => "False" %>
+        <%= c.radio_button :gender, false, :checked => true %>
+      </div>
+      <div class="form-group">
+        <%= c.label :author, "Imię i Nazwisko autora komentarza" %>
+        <%= c.text_field :author, class: "form-control" %>
+      </div>
+      <div class="form-group">
+        <%= c.label :body, "Treść komentarza" %>
+        <%= c.text_field :body, class: "form-control" %>
+      </div>
+      <div class="panel-footer">
+        <div class="actions">
+          <%= c.submit "Dodaj kommentarz" %>
         </div>
-          <div class="form-group">
-            <%= c.label :author, "Imię i Nazwisko autora komentarza" %>
-            <%= c.text_field :author, class: "form-control" %>
+<% end %>
+</div>
+</div>
+  <%= form_for (Education.new) do |e| %>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <center><h1>Dodawanie szkół, kursów, szkoleń itp.:</h1></center>
+        </div>
+        <div class="field">
+          <h2 class="text-center"><%= e.label :category, "Rodzaj szkoły, kursu, szkolenia" %></h2><br/>
+          <div class="container">
+            <p>
+              <%= e.hidden_field :admin_id, :value => current_admin.id %>
+              <%= e.radio_button :category,'szkola', :checked => true%>
+              <%= e.label :category, "Szkoła", :value => "szkola" %>
+            </p>
+            <p>
+              <%= e.radio_button :category,'szkolenie'%>
+              <%= e.label :category, "Szkolenie", :value => "szkolenie" %>
+            </p>
+            <p>
+              <%= e.radio_button :category,'kurs'%>
+              <%= e.label :category, "Kurs", :value => "kurs" %>
+            </p>
+            <p>
+              <%= e.radio_button :category,'certyfikat'%>
+              <%= e.label :category, "Certyfikat", :value => "certyfikat" %>
+            </p>
           </div>
-            <div class="form-group">
-              <%= c.label :body, "Treść komentarza" %>
-              <%= c.text_field :body, class: "form-control" %>
+        </div>
+        <div class="form-group">
+          <%= e.label :description, "Opis szkoły, kursu, szkolenia" %>
+          <%= e.text_field :description, class: "form-control" %>
+        </div>
+        <div class="panel-footer">
+          <div class="actions">
+            <%= e.submit "Dodaj" %>
+          </div>
+  <% end %>
+  </div>
+  </div>
+<%= form_for (Value.find(id=1)) do |v| %>
+
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <center><h1>Edycja Cen Makijaży</h1></center>
+      </div>
+      <div class="field">
+        <div class="container">
+          <div class="form-group">
+            <%= v.hidden_field :admin_id, :value => current_admin.id %>
+            <%= v.label :price_in, "Cena Makijażu Wieczorowego [zł]" %>
+            <div style="width: 200px;"><%= v.number_field :price_in, min:0, class: "form-control" %></div>
+            <div class="actions">
+              <%= v.submit "Zatwierdź" %>
             </div>
-    <div class="panel-footer">
-              <div class="actions">
-                <%= c.submit "Dodaj kommentarz" %>
-              </div>
-            <% end %>
+          </div>
+        <% end %>
+    <%= form_for (Value.find(id=2)) do |v1| %>
+          <div class="form-group">
+          <%= v1.hidden_field :admin_id, :value => current_admin.id %>
+          <%= v1.label :price_in, "Cena Makijażu Ślubnego [zł]" %>
+          <div style="width: 200px;"><%= v1.number_field :price_in, min:0, class: "form-control" %></div>
+            <div class="actions">
+              <%= v1.submit "Zatwierdź" %>
+            </div>
+          </div>
+    <% end %>
+<%= form_for (Value.find(id=3)) do |v2| %>
+          <div class="form-group">
+            <%= v2.hidden_field :admin_id, :value => current_admin.id %>
+            <%= v2.label :price_in, "Cena Makijażu Dziennego [zł]" %>
+            <div style="width: 200px;"><%= v2.number_field :price_in, min:0, class: "form-control" %></div>
+    <div class="actions">
+      <%= v2.submit "Zatwierdź" %>
     </div>
+      </div>
+    </div>
+    </div>
+      <div class="panel-footer">
+<% end %>
+</div>
 </div>
 <table>
   <tbody>
   <div class="panel panel-default">
-  <div class="panel-heading"><center><h1>Zdjęcia</h1></center></div>
-  <div class="panel-body">
-    <% @images.each do |image| %>
-      <div id="images" class="transitions-enabled">
-        <div class="box">
-          <div class="panel panel-default">
-        <%= link_to image_tag(image.img.url(:original)), image.img.url %>
-            <div class="panel-body">
-              <%= image.admin_id %>
-            </div>
-              <div class="panel-footer">
-                <%= button_to 'Show', image %><br/>
-                <%= button_to 'Edit', edit_image_path(image) %><br/>
-                <%= button_to 'Destroy', image, method: :delete, data: { confirm: 'Are you sure?' } %><br/>
-              </div>
-          </div>
-        </div>
-    <% end %>
+    <div class="panel-heading">
+      <center><h1>Zdjęcia</h1></center>
     </div>
-  </div>
+    <div class="panel-body">
+      <% @images.each do |image| %>
+          <div id="images" class="transitions-enabled">
+            <div class="box">
+              <div class="panel panel-default">
+                <%= link_to image_tag(image.img.url(:original)), image.img.url %>
+                <div class="panel-body">
+                  <%= image.admin_id %>
+                </div>
+                <div class="panel-footer">
+                  <%= link_to 'Pokaż', image %><br/>
+                  <%= link_to 'Edytuj', edit_image_path(image) %><br/>
+                  <%= link_to 'Usuń', image, method: :delete, data: {confirm: 'Are you sure?'} %><br/>
+                </div>
+              </div>
+            </div>
+      <% end %>
+      </div>
+    </div>
   </div>
   </tbody>
 </table>
 <table>
   <tbody>
-    <div class="panel panel-default">
-      <div class="panel-heading"><center><h1>Komentarze</h1></center></div>
-      <div class="panel-body">
-        <% @comments.each do |comment| %>
-          <div id="images" class="transitions-enabled">
-            <div class="box">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <center><h1>Komentarze</h1></center>
+    </div>
+    <div class="panel-body">
+      <% @comments.each do |comment| %>
+            <div class="col-md-3 col-sm-3 col-xs-12">
               <div class="panel panel-default">
-              <% if Comment.where(gender: "True") %>
-                  <img class="circular" <%= image_tag('/uploads/system/mezczyzna.jpg')%></br>
-              <% else %>
-                  <img class="circular" <%= image_tag('/uploads/system/kobieta.jpg')%></br>
-              <%end%>
+                <% if comment.gender== "true" %>
+                    <img class="circular" <%= image_tag('/uploads/system/mezczyzna.jpg') %></br>
+                <% else %>
+                    <img class="circular" <%= image_tag('/uploads/system/kobieta.jpg') %></br>
+                <% end %>
                 <div class="panel-body">
                   <p><%= comment.author %></p>
                 </div>
                 <div class="panel-footer">
-              <p><%= comment.body %></p>
+                  <p><%= comment.body %></p>
+                  <div style="float: left; width: auto;"><%= button_to 'Show', comment %></div>
+                  <div style="float: left; width: auto;"><%= button_to 'Edit', edit_comment_path(comment) %></div>
+                  <div style="float: left; width: auto;"><%= button_to 'Destroy', comment, method: :delete, data: {confirm: 'Are you sure?'} %></div>
                 </div>
               </div>
             </div>
-          </div>
-        <% end %>
-      </div>
+      <% end %>
     </div>
+  </div>
+  </tbody>
+</table>
+<table>
+<tbody>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <center><h1>Szkoły, kursy, szkolenia itp.</h1></center>
+  </div>
+  <div class="panel-body">
+    <% @educations.each do |education| %>
+          <div class="col-md-3 col-sm-3 col-xs-12">
+            <div class="panel panel-default">
+              <% if education.category== "szkola" %>
+                  <img class="circular" <%= image_tag('/uploads/system/mezczyzna.jpg') %></br>
+              <% else %>
+                  <img class="circular" <%= image_tag('/uploads/system/kobieta.jpg') %></br>
+              <% end %>
+              <div class="panel-body">
+                <p>Typ:<%= education.category %></p>
+              </div>
+              <div class="panel-footer">
+                <p>Opis:<%= education.description %></p>
+              </div>
+            </div>
+          </div>
+    <% end %>
+  </div>
+</div>
+</tbody>
+</table>
+<table>
+  <tbody>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <center><h1>Ceny makijaży</h1></center>
+    </div>
+    <div class="panel-body">
+      <% @values.each do |value| %>
+            <div class="box">
+              <div class="panel panel-default">
+                <div class="panel-body">
+                  <p><%= value.admin_id %></p>
+                  <p><%= value.price_in %> [zł]</p>
+                </div>
+                <div class="panel-footer">
+                  <%= link_to 'Pokaż', value %><br/>
+                  <%= link_to 'Edytuj', edit_value_path(value) %><br/>
+                  <%= link_to 'Usuń', value, method: :delete, data: {confirm: 'Are you sure?'} %><br/>
+                </div>
+              </div>
+            </div>
+      <% end %>
+    </div>
+  </div>
   </tbody>
 </table>

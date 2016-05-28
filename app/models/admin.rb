@@ -8,4 +8,6 @@ class Admin < ActiveRecord::Base
   end
   has_many :images
   has_many :comments
+  has_many :educations
+  has_many :values
 end

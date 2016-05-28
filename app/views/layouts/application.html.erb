@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
-<!--<head>
+<head>
   <title>Justyna Miazga</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum sacle=1">
@@ -10,13 +10,26 @@
   <link href='https://fonts.googleapis.com/css?family=Shadows+Into+Light+Two' rel='stylesheet' type='text/css'>
 </head>
 <body data-spy="scroll" data-target="#navtainer" data-offset="60">
-
-
 <div class="container">
   <% flash.each do |name, msg| %>
       <%= content_tag(:div, msg, class: "alert alert-info") %>
-  <% end %>-->
+  <% end %>
   <%= yield %>
+  <div class="panel-footer" id="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 col-sm-3">
+          <p><i class="fa fa-facebook-square" aria-hidden="true">&nbsp;<%= link_to "Dołącz do nas na Facebook'u", url="https://www.facebook.com/pages/MAKE-UP-Justyna-Miazga/487435351397998?fref=ts" %></i></p>
+          <p id="copyright">&copy; K.Olejnicki 2016</p>
+        </div>
+        <div class="col-md-4 col-sm-3" id="contact">
+          <p><i class="fa fa-user" aria-hidden="true">&nbsp;&nbsp;Justyna&nbsp;Miazga</i></p>
+          <p><i class="fa fa-phone" aria-hidden="true">&nbsp;&nbsp;503590237</i></p>
+          <p><i class="fa fa-envelope-o" aria-hidden="true">&nbsp;&nbsp;<%= link_to 'justynamiazga1992@gmail.com', href="mailto:justynamiazga1992@gmail.com" %></i></p>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
 </body>

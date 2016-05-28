@@ -6,3 +6,9 @@ $ ->
     $('#images').masonry
       itemSelector: '.box'
       isFitWidth: true
+
+$ ->
+  $('#comments').imagesLoaded ->
+    $('#comments').masonry
+      itemSelector: '.box'
+      isFitWidth: true

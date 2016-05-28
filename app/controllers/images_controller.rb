@@ -1,5 +1,7 @@
 class ImagesController < ApplicationController
-  before_action :authenticate_admin!, only:[:show]
+  before_action :set_image, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_admin!, except: [:index, :show]
+
   # GET /images
   # GET /images.json
   def index
@@ -7,6 +9,10 @@ class ImagesController < ApplicationController
     @image = Image.new
     @comments = Comment.all
     @comment = Comment.new
+    @educations = Education.all
+    @education = Education.new
+    @values = Value.all
+    @value = Value.new
   end
 
   # GET /images/1
@@ -16,17 +22,20 @@ class ImagesController < ApplicationController
 
   # GET /images/new
   def new
-    @image = Image.new
+    @image = current_admin.images.build
+    @admin = Admin.new
   end
 
   # GET /images/1/edit
   def edit
+    @admins = Admin.all
+    @admin = Admin.new
   end
 
   # POST /images
   # POST /images.json
   def create
-    @image = Image.new(image_params)
+    @image = current_admin.images.build(image_params)
 
     respond_to do |format|
       if @image.save
@@ -64,13 +73,18 @@ class ImagesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_image
-      @image = Image.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_image
+    @image = Image.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def image_params
-      params.require(:image).permit(:id, :admin_id, :img)
-    end
+  def correct_admin
+    @image = current_admin.images.find_by(id: params[:id])
+    redirect_to root_path, notice: 'Nie jesteś uprawniony do edycji tego zdjęcia!'
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def image_params
+    params.require(:image).permit(:id, :admin_id, :img)
+  end
 end
