@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'contact_forms/new'
+  get 'contact_forms/create'
+  resources :contact_forms
   resources :values
   resources :educations
   get '/cennik' => 'pages#price_list'
