@@ -22,7 +22,7 @@ class ImagesController < ApplicationController
 
   # GET /images/new
   def new
-    @image = current_admin.images.build
+    @image = Image.new
     @admin = Admin.new
   end
 
@@ -35,7 +35,7 @@ class ImagesController < ApplicationController
   # POST /images
   # POST /images.json
   def create
-    @image = current_admin.images.build(image_params)
+    @image = Image.new(image_params)
 
     respond_to do |format|
       if @image.save
@@ -76,11 +76,6 @@ class ImagesController < ApplicationController
   # Use callbacks to share common setup or constraints between actions.
   def set_image
     @image = Image.find(params[:id])
-  end
-
-  def correct_admin
-    @image = current_admin.images.find_by(id: params[:id])
-    redirect_to root_path, notice: 'Nie jesteś uprawniony do edycji tego zdjęcia!'
   end
 
   # Never trust parameters from the scary internet, only allow the white list through.

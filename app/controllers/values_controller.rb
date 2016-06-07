@@ -16,7 +16,7 @@ class ValuesController < ApplicationController
 
   # GET /values/new
   def new
-    @value = current_admin.values.build
+    @value = Value.new
     @admin = Admin.new
   end
 
@@ -29,7 +29,7 @@ class ValuesController < ApplicationController
   # POST /values
   # POST /values.json
   def create
-    @value = current_admin.values.build(value_params)
+    @value = Value.new(value_params)
 
     respond_to do |format|
       if @value.save
@@ -47,7 +47,7 @@ class ValuesController < ApplicationController
   def update
     respond_to do |format|
       if @value.update(value_params)
-        format.html { redirect_to @value, notice: 'Value was successfully updated.' }
+        format.html { redirect_to '/admin', notice: 'Cena pomyślnie zmieniona.' }
         format.json { render :show, status: :ok, location: @value }
       else
         format.html { render :edit }
@@ -61,7 +61,7 @@ class ValuesController < ApplicationController
   def destroy
     @value.destroy
     respond_to do |format|
-      format.html { redirect_to values_url, notice: 'Value was successfully destroyed.' }
+      format.html { redirect_to values_url, notice: 'Cena usunięta' }
       format.json { head :no_content }
     end
   end
@@ -71,11 +71,6 @@ class ValuesController < ApplicationController
     def set_value
       @value = Value.find(params[:id])
     end
-
-  def correct_admin
-    @value = current_admin.values.find_by(id: params[:id])
-    redirect_to root_path, notice: 'Nie jesteś uprawniony do edycji tej ceny!'
-  end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def value_params

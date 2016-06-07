@@ -17,6 +17,8 @@ gem 'paperclip'
 gem 'rmagick'
 gem 'masonry-rails'
 gem 'aws-sdk'
+gem 'will_paginate'
+gem 'will_paginate-bootstrap'
 
 source "https://rails-assets.org" do
   gem 'rails-assets-bootstrap-multiselect'

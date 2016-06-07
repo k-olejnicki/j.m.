@@ -16,20 +16,18 @@ class EducationsController < ApplicationController
 
   # GET /educations/new
   def new
-    @education = current_admin.educations.build
+    @education = Education.new
     @admin = Admin.new
   end
 
   # GET /educations/1/edit
   def edit
-    @admins = Admin.all
-    @admin = Admin.new
   end
 
   # POST /educations
   # POST /educations.json
   def create
-    @education = current_admin.educations.build(education_params)
+    @education = Education.new(education_params)
 
     respond_to do |format|
       if @education.save
@@ -71,11 +69,6 @@ class EducationsController < ApplicationController
     def set_education
       @education = Education.find(params[:id])
     end
-
-  def correct_admin
-    @education = current_admin.educations.find_by(id: params[:id])
-    redirect_to '/login', notice: 'Nie jesteś uprawniony do edycji tej edukacji!'
-  end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def education_params

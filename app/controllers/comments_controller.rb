@@ -17,8 +17,7 @@ class CommentsController < ApplicationController
 
   # GET /comments/new
   def new
-    @comment = current_admin.comments.build
-    @admin = Admin.new
+    @comment = Comment.new
   end
 
   # GET /comments/1/edit
@@ -28,7 +27,7 @@ class CommentsController < ApplicationController
   # POST /comments
   # POST /comments.json
   def create
-    @comment = current_admin.comments.build(comment_params)
+    @comment = Comment.new(comment_params)
 
     respond_to do |format|
       if @comment.save
@@ -71,10 +70,6 @@ class CommentsController < ApplicationController
     @comment = Comment.find(params[:id])
   end
 
-  def correct_admin
-    @comment = current_admin.comments.find_by(id: params[:id])
-    redirect_to '/login', notice: 'Nie jesteś uprawniony do edycji tego zdjęcia!'
-  end
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def comment_params

@@ -60,28 +60,32 @@
   <section class="section2" id="o_mnie" data-speed="4" data-type="background">
     <div class="container">
       <div class="panel panel-default">
-        <div class="panel-body">
-          <h1> O mnie </h1>
-
-
-          <div class="row">
-            <div class="well col-sm-4 col-md-4">
-              <h2>Convert</h2>
-              <p>Convert to pastafarianism. Taste the Rainbow </p>
-              <p><a class="btn btn-success" href="#">View details </a></p>
-            </div><!-- /.span4 -->
-            <div class="well col-sm-4 col-md-4">
-              <h2>Dance!</h2>
-              <p>Disco all night!!! Boogie! </p>
-              <p><a class="btn btn-success" href="#">View details </a></p>
-            </div><!-- /.span4 -->
-            <div class="well col-sm-4 col-md-4">
-              <h2>Pie</h2>
-              <p>YUM YUM YUM </p>
-              <p><a class="btn btn-success" href="#">View details </a></p>
-            </div><!-- /.span4 -->
+          <div class="page-header">
+            <h1> O mnie </h1>
           </div>
+        <div class="panel panel-body">
+          <div class="col-md-5 col-md-offset-2">
+              <img src="/uploads/system/justyna.jpg" id="foto">
+            </div>
+            <div class="col-md-4">
+              <div class="thumbnail" id="about">
+                <% @educations.each do |education| %>
+                  <% if education.category== "szkola" %>
+                     <p><i class="fa fa-graduation-cap" aria-hidden="true">&nbsp;&nbsp;<%= education.description %></i></p>
+                      <% elsif education.category== "szkolenie" %>
+                        <p><i class="fa fa-book" aria-hidden="true">&nbsp;&nbsp;<%= education.description %></i></p>
+                          <% elsif education.category== "kurs" %>
+                            <p><i class="fa fa-language" aria-hidden="true">&nbsp;&nbsp;<%= education.description %></i></p>
+                              <% elsif education.category== "certyfikat" %>
+                                <p><i class="fa fa-check-square-o" aria-hidden="true">&nbsp;&nbsp;<%= education.description %></i></p>
+                                  <% elsif education.category== "warsztat" %>
+                                    <p><i class="fa fa-cogs" aria-hidden="true">&nbsp;&nbsp;<%= education.description %></i></p>
+                  <%end%>
+                <%end%>
+              </div>
+            </div><!-- /.span4 -->
         </div>
+        <div class="panel-footer"></div>
       </div>
     </div>
   </section>
@@ -92,41 +96,29 @@
       <div class="page-header">
         <h1>Opinie Klientów</h1>
       </div>
-      <div class="carousel slide" id="myCarousel">
-        <div class="carousel-inner">
-          <div class="item active"><!-- /Slidestatic -->
-            <div class="thumbnail">
-              <img class="circular" <%= image_tag('/uploads/system/kobieta.jpg') %></br>
+      <div class="panel panel-body">
+        <% @comments.each do |comment| %>
+            <div class="col-md-2">
+              <div class="thumbnail">
+                <% if comment.gender== "true" %>
+                    <img class="circular" <%= image_tag('/uploads/system/mezczyzna.jpg') %>
+                <% else %>
+                    <img class="circular" <%= image_tag('/uploads/system/kobieta.jpg') %>
+                <% end %>
+              </div>
+              <div class="caption">
+                <h3><%= comment.author %></h3>
+                <p><%= comment.body %></p>
+              </div>
             </div>
-            <div class="caption">
-              <h3>Alicja Janicka</h3>
-              <p>"Polecam:) Pełen profesjonalizm i dokładność."</p>
-            </div>
-            <div class="control-box">
-              <a data-slide="prev" href="#myCarousel" class="carousel-control left">‹</a>
-              <a data-slide="next" href="#myCarousel" class="carousel-control right">›</a>
-            </div><!-- /.control-box -->
-          </div><!-- /Slideactive -->
-          <div class="item">
-            <% @comments.each do |comment| %>
-                <div class="thumbnail">
-                  <% if comment.gender== "true" %>
-                      <img class="circular" <%= image_tag('/uploads/system/mezczyzna.jpg') %>
-                  <% else %>
-                      <img class="circular" <%= image_tag('/uploads/system/kobieta.jpg') %>
-                  <% end %>
-                </div>
-                <div class="caption">
-                  <h3><%= comment.author %></h3>
-                  <p><%= comment.body %></p>
-                </div>
-            <% end %>
-            <div class="control-box">
-              <a data-slide="prev" href="#myCarousel" class="carousel-control left">&lsaquo;</a>
-              <a data-slide="next" href="#myCarousel" class="carousel-control right">&lsaquo;</a>
-            </div><!-- /.control-box -->
-          </div><!-- /#myCarousel -->
+        <% end %>
+      </div>
+      <div class="panel-footer">
+      <% if @comments.count > 6 %>
+        <div class="center">
+          <%= will_paginate @comments, renderer: BootstrapPagination::Rails %>
         </div>
+      <%end%>
       </div>
     </div>
   </section>
@@ -223,6 +215,13 @@
               <%= link_to image_tag(image.img.url(:medium)), image.img.url %>
             </div>
         <% end %>
+      </div>
+      <div class="panel-footer">
+        <% if @images.count > 50 %>
+            <div class="center">
+              <%= will_paginate @images, renderer: BootstrapPagination::Rails %>
+            </div>
+        <%end%>
       </div>
     </div>
   </section>

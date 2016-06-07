@@ -309,7 +309,21 @@ body {
   -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
   -moz-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
 }
-
+#foto {
+  width: 300px;
+  height: 436px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+  -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+  -moz-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+}
+#about {
+  width: 300px;
+  height: 100%;
+  text-shadow: 0 -1px 0 rgba(120, 123, 140, 0.25);
+  box-shadow: 0 0 8px rgba(146, 0, 86, 0.8);
+  -webkit-box-shadow: 0 0 8px rgba(146, 0, 86, 0.8);
+  -moz-box-shadow: 0 0 8px rgba(146, 0, 86, 0.8);
+}
 .jumbotron img {
   text-align: center;
   max-width: 400px;
@@ -463,6 +477,9 @@ body {
   text-shadow: 0 0 3px #000;
   border: 1px solid #fff;
   font-size: 0.8em;
+  text-align: center;
+}
+.center {
   text-align: center;
 }
 

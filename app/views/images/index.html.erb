@@ -11,7 +11,7 @@
         </div>
     <% end %>
     <div class="panel panel-default">
-      <div class="panel-heading"><h1>Administracja Stroną</h1></div>
+      <div class="panel-heading" id="admin_title"><h1>Administracja Stroną</h1></div>
       </div>
     <div class="panel panel-default">
       <div class="panel-heading"><h1>Dodawanie zdjęć</h1></div>
@@ -84,6 +84,10 @@
               <%= e.radio_button :category,'certyfikat'%>
               <%= e.label :category, "Certyfikat", :value => "certyfikat" %>
             </p>
+            <p>
+              <%= e.radio_button :category,'warsztat'%>
+              <%= e.label :category, "Warsztat", :value => "warsztat" %>
+            </p>
           </div>
         </div>
         <div class="form-group">
@@ -97,8 +101,8 @@
   <% end %>
   </div>
   </div>
-<%= form_for (Value.find(id=1)) do |v| %>
 
+<%= form_for (Value.find(id=1)) do |v| %>
     <div class="panel panel-default">
       <div class="panel-heading">
         <center><h1>Edycja Cen Makijaży</h1></center>
@@ -110,33 +114,114 @@
             <%= v.label :price_in, "Cena Makijażu Wieczorowego [zł]" %>
             <div style="width: 200px;"><%= v.number_field :price_in, min:0, class: "form-control" %></div>
             <div class="actions">
-              <%= v.submit "Zatwierdź" %>
+              <%= v.submit "Zmień" %>
             </div>
           </div>
         <% end %>
+
     <%= form_for (Value.find(id=2)) do |v1| %>
           <div class="form-group">
           <%= v1.hidden_field :admin_id, :value => current_admin.id %>
           <%= v1.label :price_in, "Cena Makijażu Ślubnego [zł]" %>
           <div style="width: 200px;"><%= v1.number_field :price_in, min:0, class: "form-control" %></div>
             <div class="actions">
-              <%= v1.submit "Zatwierdź" %>
+              <%= v1.submit "Zmień" %>
             </div>
           </div>
     <% end %>
+
 <%= form_for (Value.find(id=3)) do |v2| %>
           <div class="form-group">
             <%= v2.hidden_field :admin_id, :value => current_admin.id %>
             <%= v2.label :price_in, "Cena Makijażu Dziennego [zł]" %>
             <div style="width: 200px;"><%= v2.number_field :price_in, min:0, class: "form-control" %></div>
     <div class="actions">
-      <%= v2.submit "Zatwierdź" %>
+      <%= v2.submit "Zmień" %>
     </div>
       </div>
+<% end %>
+
+    <%= form_for (Value.find(id=4)) do |v3| %>
+        <div class="form-group">
+          <%= v3.hidden_field :admin_id, :value => current_admin.id %>
+          <%= v3.label :price_in, "[Cennik] Cena Makijażu Dziennego [zł]" %>
+          <div style="width: 200px;"><%= v3.number_field :price_in, min:0, class: "form-control" %></div>
+          <div class="actions">
+            <%= v3.submit "Zmień" %>
+          </div>
+        </div>
+<% end %>
+
+<%= form_for (Value.find(id=5)) do |v4| %>
+    <div class="form-group">
+      <%= v4.hidden_field :admin_id, :value => current_admin.id %>
+      <%= v4.label :price_in, "[Cennik] Cena Makijażu Wieczorowego [zł]" %>
+      <div style="width: 200px;"><%= v4.number_field :price_in, min:0, class: "form-control" %></div>
+      <div class="actions">
+        <%= v4.submit "Zmień" %>
+      </div>
+    </div>
+<% end %>
+
+<%= form_for (Value.find(id=6)) do |v5| %>
+    <div class="form-group">
+      <%= v5.hidden_field :admin_id, :value => current_admin.id %>
+      <%= v5.label :price_in, "[Cennik] Cena Makijażu Ślubnego [zł]" %>
+      <div style="width: 200px;"><%= v5.number_field :price_in, min:0, class: "form-control" %></div>
+      <div class="actions">
+        <%= v5.submit "Zmień" %>
+      </div>
+    </div>
+<% end %>
+
+<%= form_for (Value.find(id=7)) do |v6| %>
+    <div class="form-group">
+      <%= v6.hidden_field :admin_id, :value => current_admin.id %>
+      <%= v6.label :price_in, "[Cennik] Cena Makijażu korekcyjnego Pana Młodego [zł]" %>
+      <div style="width: 200px;"><%= v6.number_field :price_in, min:0, class: "form-control" %></div>
+      <div class="actions">
+        <%= v6.submit "Zmień" %>
+      </div>
+    </div>
+<% end %>
+
+<%= form_for (Value.find(id=8)) do |v7| %>
+    <div class="form-group">
+      <%= v7.hidden_field :admin_id, :value => current_admin.id %>
+      <%= v7.label :price_in, "[Cennik] Cena Doklejenia kępek rzęs [zł]" %>
+      <div style="width: 200px;"><%= v7.number_field :price_in, min:0, class: "form-control" %></div>
+      <div class="actions">
+        <%= v7.submit "Zmień" %>
+      </div>
+    </div>
+<% end %>
+
+<%= form_for (Value.find(id=9)) do |v8| %>
+    <div class="form-group">
+      <%= v8.hidden_field :admin_id, :value => current_admin.id %>
+      <%= v8.label :price_in, "[Cennik] Cena Doklejenia rzęs całych [zł]" %>
+      <div style="width: 200px;"><%= v8.number_field :price_in, min:0, class: "form-control" %></div>
+      <div class="actions">
+        <%= v8.submit "Zmień" %>
+      </div>
+    </div>
+<% end %>
+
+<%= form_for (Value.find(id=10)) do |v9| %>
+    <div class="form-group">
+      <%= v9.hidden_field :admin_id, :value => current_admin.id %>
+      <%= v9.label :price_in, "[Cennik] Cena Indywidualnej lekcji makijażu [zł]" %>
+      <div style="width: 200px;"><%= v9.number_field :price_in, min:0, class: "form-control" %></div>
+      <div class="actions">
+        <%= v9.submit "Zmień" %>
+      </div>
+    </div>
     </div>
     </div>
       <div class="panel-footer">
 <% end %>
+
+
 </div>
 </div>
 <table>
@@ -187,9 +272,9 @@
                 </div>
                 <div class="panel-footer">
                   <p><%= comment.body %></p>
-                  <div style="float: left; width: auto;"><%= button_to 'Show', comment %></div>
-                  <div style="float: left; width: auto;"><%= button_to 'Edit', edit_comment_path(comment) %></div>
-                  <div style="float: left; width: auto;"><%= button_to 'Destroy', comment, method: :delete, data: {confirm: 'Are you sure?'} %></div>
+                  <div style="float: left; width: auto;"><%= button_to 'Show', comment_url(:id) %></div>
+                  <div style="float: left; width: auto;"><%= button_to 'Edit', edit_comment_url(comment) %></div>
+                  <div style="float: left; width: auto;"><%= button_to 'Destroy', comment_url(:id), method: :delete, data: {confirm: 'Are you sure?'} %></div>
                 </div>
               </div>
             </div>
@@ -234,6 +319,7 @@
     </div>
     <div class="panel-body">
       <% @values.each do |value| %>
+          <div class="col-md-3 col-sm-3 col-xs-12">
             <div class="box">
               <div class="panel panel-default">
                 <div class="panel-body">
@@ -247,6 +333,7 @@
                 </div>
               </div>
             </div>
+          </div>
       <% end %>
     </div>
   </div>
