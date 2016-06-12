@@ -24,5 +24,20 @@ module Justyna
     config.active_record.raise_in_transactional_callbacks = true
     config.assets.paths << Rails.root.join("app", "assets", "fonts")
     config.assets.precompile += %w(.svg .eot .woff .woff2 .ttf)
+    config.action_mailer.delivery_method = :smtp
+    config.action_mailer.smtp_settings = {
+        address: "smtp.gmail.com",
+        port: 587,
+        domain: ENV['GMAIL_DOMAIN'],
+        user_name: ENV['GMAIL_USERNAME'],
+        password: ENV['GMAIL_PASSWORD'],
+        authentication: :plain,
+        enable_starttls_auto: true
+    }
+
+    config.action_mailer.default_url_options = {
+        host: "www.justynamiazga.pl"
+    }
   end
 end
+

@@ -1,7 +1,4 @@
 Rails.application.routes.draw do
-  get 'contact_forms/new'
-  get 'contact_forms/create'
-  resources :contact_forms
   resources :values
   resources :educations
   get '/cennik' => 'pages#price_list'
@@ -17,7 +14,8 @@ Rails.application.routes.draw do
   end
   post '/' => 'home#index'
   root 'home#index'
-
+  get 'contact', to: 'messages#new', as: 'contact'
+  post 'contact', to: 'messages#create'
 
 
   # The priority is based upon order of creation: first created -> highest priority.

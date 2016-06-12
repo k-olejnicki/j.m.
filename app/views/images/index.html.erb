@@ -241,7 +241,7 @@
                 </div>
                 <div class="panel-footer">
                   <%= link_to 'Pokaż', image %><br/>
-                  <%= link_to 'Edytuj', edit_image_path(image) %><br/>
+                  <%= link_to 'Zmień', edit_image_path(image) %><br/>
                   <%= link_to 'Usuń', image, method: :delete, data: {confirm: 'Are you sure?'} %><br/>
                 </div>
               </div>
@@ -272,9 +272,9 @@
                 </div>
                 <div class="panel-footer">
                   <p><%= comment.body %></p>
-                  <div style="float: left; width: auto;"><%= button_to 'Show', comment_url(:id) %></div>
-                  <div style="float: left; width: auto;"><%= button_to 'Edit', edit_comment_url(comment) %></div>
-                  <div style="float: left; width: auto;"><%= button_to 'Destroy', comment_url(:id), method: :delete, data: {confirm: 'Are you sure?'} %></div>
+                  <div style="float: left; width: auto;"><%= button_to 'Pokaż', comment_url(:id) %></div>
+                  <div style="float: left; width: auto;"><%= button_to 'Zmień', edit_comment_url(comment) %></div>
+                  <div style="float: left; width: auto;"><%= button_to 'Usuń', comment_url(:id), method: :delete, data: {confirm: 'Are you sure?'} %></div>
                 </div>
               </div>
             </div>
@@ -293,16 +293,25 @@
     <% @educations.each do |education| %>
           <div class="col-md-3 col-sm-3 col-xs-12">
             <div class="panel panel-default">
-              <% if education.category== "szkola" %>
-                  <img class="circular" <%= image_tag('/uploads/system/mezczyzna.jpg') %></br>
-              <% else %>
-                  <img class="circular" <%= image_tag('/uploads/system/kobieta.jpg') %></br>
-              <% end %>
+                  <% if education.category== "szkola" %>
+                      <p><i class="fa fa-graduation-cap" aria-hidden="true">&nbsp;&nbsp;<%= education.description %></i></p>
+                  <% elsif education.category== "szkolenie" %>
+                      <p><i class="fa fa-book" aria-hidden="true">&nbsp;&nbsp;<%= education.description %></i></p>
+                  <% elsif education.category== "kurs" %>
+                      <p><i class="fa fa-language" aria-hidden="true">&nbsp;&nbsp;<%= education.description %></i></p>
+                  <% elsif education.category== "certyfikat" %>
+                      <p><i class="fa fa-check-square-o" aria-hidden="true">&nbsp;&nbsp;<%= education.description %></i></p>
+                  <% elsif education.category== "warsztat" %>
+                      <p><i class="fa fa-cogs" aria-hidden="true">&nbsp;&nbsp;<%= education.description %></i></p>
+                  <% end %>
               <div class="panel-body">
                 <p>Typ:<%= education.category %></p>
               </div>
               <div class="panel-footer">
                 <p>Opis:<%= education.description %></p>
+                <div style="float: left; width: auto;"><%= button_to 'Pokaż', education_url(:id) %></div>
+                <div style="float: left; width: auto;"><%= button_to 'Zmień', edit_education_url(education) %></div>
+                <div style="float: left; width: auto;"><%= button_to 'Usuń', education_url(:id), method: :delete, data: {confirm: 'Na pewno?'} %></div>
               </div>
             </div>
           </div>
@@ -329,7 +338,6 @@
                 <div class="panel-footer">
                   <%= link_to 'Pokaż', value %><br/>
                   <%= link_to 'Edytuj', edit_value_path(value) %><br/>
-                  <%= link_to 'Usuń', value, method: :delete, data: {confirm: 'Are you sure?'} %><br/>
                 </div>
               </div>
             </div>
