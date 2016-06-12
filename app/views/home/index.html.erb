@@ -31,7 +31,7 @@
       <h1><img src="uploads/system/Logo z justyna.png"></h1>
       <h2>Usługi Mobilne</h2>
           <div class="container" id="title">
-            <a class="btn btn-primary btn-lg" href="#cennik">Umów się</a>
+            <a class="btn btn-primary btn-lg" href="#kontakt">Umów się</a>
             <a class="btn btn-primary btn-lg" href="#o_mnie">Sprawdź mnie</a>
           </div>
     </div>
@@ -229,15 +229,54 @@
   <!-- Section #6 -->
 </div>
 <section class="section6" id="kontakt" data-speed="2" data-type="background">
-    <div class="panel panel-default">
+  <div class="container">
+  <div class="panel panel-default">
       <div class="panel-body">
         <div class="page-header">
           <h1>Pozostańmy w kontakcie</h1>
         </div>
+        <div class="col-md-6">
         <div id="fb-root"></div>
         <div id="container" style="width:100%;">
           <div class="fb-page" data-href="https://www.facebook.com/MAKE-UP-Justyna-Miazga-487435351397998/" data-tabs="timeline" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/MAKE-UP-Justyna-Miazga-487435351397998/"><a href="https://www.facebook.com/MAKE-UP-Justyna-Miazga-487435351397998/">MAKE UP Justyna Miazga</a></blockquote></div></div>
         </div>
+        </div>
+        <div class="col-md-6">
+        <div class="panel panel-default">
+          <div class="panel-body" id="call">
+            <div class="page-header">
+              <h2>Formularz kontaktowy</h2>
+            </div>
+        <%= form_for @message, url: contact_path do |message_form| %>
+            <fieldset>
+              <div class="field">
+                <p><%= message_form.text_field :name, placeholder: "Imię i Nazwisko" %></p>
+              </div>
+
+              <div class="field">
+                <p><%= message_form.email_field :email, placeholder: "Email"%></p>
+              </div>
+
+              <div class="field">
+                <p><%= message_form.text_field :tel, placeholder: "Telefon" %></p>
+              </div>
+
+              <div class="field">
+                <p><%= message_form.text_area :content, placeholder: "Treść Wiadomości"%></p>
+              </div>
+            </fieldset>
+            <div class="panel-footer">
+            <fieldset>
+              <div class="field">
+                <%= message_form.submit "Wyślij" %>
+              </div>
+            </fieldset>
+            </div>
+        <% end %>
+          </div>
+        </div>
+      </div>
       </div>
     </div>
+  </div>
 </section>

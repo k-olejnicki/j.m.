@@ -10,6 +10,7 @@ class HomeController < ApplicationController
     @comment = Comment.new
     @value = Value.new
     @education = Education.new
+    @message = Message.new
     @price1 = Value.find(1)
     @price2 = Value.find(2)
     @price3 = Value.find(3)

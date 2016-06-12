@@ -391,7 +391,15 @@ body {
   padding-left: 20px;
   margin-top: 40px;
 }
-
+#call {
+  font-family: "Shadows Into Light Two", serif;
+  text-align: center;
+}
+#call h2 {
+  text-align: center;
+  color: #920056;
+  text-shadow: 0 -1px 0 rgba(120, 123, 140, 0.25);
+}
 
 .fb-page {
   width: 500px;
