@@ -22,7 +22,7 @@ $(document).ready ->
     return
   js = d.createElement(s)
   js.id = id
-  js.src = '//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5&appId=443271375714375'
+  js.src = '//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.6&appId=443271375714375'
   fjs.parentNode.insertBefore js, fjs
   return
 ) document, 'script', 'facebook-jssdk'
